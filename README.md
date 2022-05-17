@@ -1,3 +1,20 @@
+### About MovieBrowser
+
+Hi! My name is Eric Chen and this was my first project working with the NextJS framework, and I experimented with using it to create a simple movie browsing website using The Movie DataBase's API.
+
+### Progress
+
+The home page is a placeholder for whatever important information I may decide to add later on.
+
+In order to search for a movie, the user can go to the search tab, input a keyword, and the page will update with all movies relevant to that keyword.
+
+Currently, I have not yet implemented the Gallery page, so there is a temporary landing page put in place.  My plans for this are to implement a gallery view of randomly selected movies, along with their ratings at a glance.  The visitor then can click on the image and will be redirected to a webpage containing more details on the movie.
+
+With this, I also plan to implement a filter feature, in which the user can set filters to narrow down the selection of movies in both the Gallery view and the Search view.
+
+I also have plans to expand my knowledge into the backend, including databasing and implementation of GraphQL.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
