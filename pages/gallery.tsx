@@ -5,11 +5,11 @@ import Link from 'next/link';
 import styles from '/styles/Home.module.css';
 import resultscss from '/styles/Results.module.css';
 
-import Header from '/components/Header.js';
-import Nav from '/components/Nav.js';
-import Footer from '/components/Footer.js';
+import { Header } from '../components/Header';
+import { Nav } from '../components/Nav';
+import { Footer } from '../components/Footer';
 
-import Search from '/components/Search.js'
+import { Search } from '../components/Search';
 
 export default function Home() {
 
@@ -21,14 +21,12 @@ export default function Home() {
       <Nav />
 
       <main>
-        <center>
           
           <h1>
             [ Gallery view ]
           </h1>
           <p><small>Implementation under progress.</small></p>
 
-        </center>
       </main>
 
       <Footer />

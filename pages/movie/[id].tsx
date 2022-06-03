@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 
 import styles from '/styles/Home.module.css';
 
-import Header from '/components/Header.js';
-import Nav from '/components/Nav.js';
-import Footer from '/components/Footer.js';
+import { Header } from '../../components/Header';
+import { Nav } from '../../components/Nav';
+import { Footer } from '../../components/Footer';
+
 
 export default function Home() {
 

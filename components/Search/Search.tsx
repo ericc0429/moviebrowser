@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
+import styles from './Search.module.css';
 
-import styles from '/styles/Home.module.css';
-import resultscss from '/styles/Results.module.css';
-
-import Header from '/components/Header.js';
-import Nav from '/components/Nav.js';
-import Footer from '/components/Footer.js';
 
 export default function Home() {
 
@@ -44,13 +36,13 @@ export default function Home() {
             <main className={ styles.main }>
 
                 <form
-                    className={ resultscss.search }
+                    className={ styles.search }
                     onSubmit={ searchMovies }
                 >
 
                     <input
                         type="text"
-                        className={ resultscss.input }
+                        className={ styles.input }
                         placeholder="movie"
                         value={ query }
                         onChange={ ( e ) => setQuery( e.target.value ) }
@@ -58,15 +50,15 @@ export default function Home() {
 
                     <button
                         type="submit"
-                        className={ resultscss.button }
+                        className={ styles.button }
                     >Search</button>
 
                 </form>
 
-                <div className={ resultscss.movielist }>
+                <div className={ styles.movielist }>
 
                     { movies.filter( movie => movie.poster_path ).map( movie => (
-                        <div className={ resultscss.moviecard }>
+                        <div className={ styles.moviecard }>
                             
                             <img
                                 key={ movie.id }
@@ -74,12 +66,12 @@ export default function Home() {
                                 alt={ movie.title + " Poster" }
                             />
 
-                            <div className={ resultscss.moviedata }>
+                            <div className={ styles.moviedata }>
                                 <h3>{ movie.title }</h3>
                                 <p><small>Release Date: { movie.release_date }</small></p>
                                 <p><small>Rating: { movie.vote_average }</small></p>
                             </div>
-                            <p className={ resultscss.moviedesc }>{ movie.overview }</p>
+                            <p className={ styles.moviedesc }>{ movie.overview }</p>
 
 
                         </div>
