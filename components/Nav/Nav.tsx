@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import styles from './Nav.module.css';
 
-export default function Header () {
+export default function Nav() {
 
     return (
         <div className={ styles.navbar }>
@@ -11,8 +11,8 @@ export default function Header () {
                 <a className={ styles.navcard }>Home</a>
             </Link>
 
-            <Link href="/gallery">
-                <a className={ styles.navcard }>Gallery</a>
+            <Link href="/trend">
+                <a className={ styles.navcard }>Now Trending</a>
             </Link>
 
             <Link href="/s">

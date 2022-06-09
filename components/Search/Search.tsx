@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 
+import { Trending } from '../Trending';
+
 import styles from './Search.module.css';
 
 
-export default function Home() {
+export default function Search() {
 
     const [ query, setQuery ] = useState( "" );
 
     const [ movies, setMovies ] = useState( [] );
+
+    const api_key="6c0d3427fcf17ddf80d04106c35a3a98";
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${ api_key }&query=${ query }`;
 
     const searchMovies = async ( e ) => {
 
         e.preventDefault();
 
         console.log( "submitting..." );
-
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=6c0d3427fcf17ddf80d04106c35a3a98&query=${ query }`;
 
         try {
             const res = await fetch( url );
@@ -31,7 +34,6 @@ export default function Home() {
 
     return (
         <div>
-
 
             <main className={ styles.main }>
 
@@ -78,6 +80,10 @@ export default function Home() {
                     ) ) }
 
                 </div>
+
+                <div className={ styles.trending }>Now Trending</div>
+
+                <Trending />
                 
 
             </main>
