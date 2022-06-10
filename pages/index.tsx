@@ -27,7 +27,7 @@ export default function Home() {
 
                 <p className={ styles.text }>
                     This website was created using NextJS, 
-                    and aims to utilize The Movie Database's 
+                    and aims to utilize The Movie Database&apos;s 
                     API to introduce the user to various 
                     movies that are currently trending, and 
                     allows for the user to search for a 

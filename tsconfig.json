@@ -18,10 +18,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "src/*":        [ "src/*" ],
-      "components/*": [ "src/components/*" ],
+      "components/*": [ "components/*" ],
+      "pages/*": [ "pages/*" ],
+      "styles/*": [ "styles/*" ],
     },
   },
   "include": [
