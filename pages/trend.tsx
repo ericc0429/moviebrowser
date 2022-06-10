@@ -1,10 +1,12 @@
-import styles from '/styles/Home.module.css';
-
+// Functions
 import { Header } from '../components/Header';
 import { Nav } from '../components/Nav';
 import { Footer } from '../components/Footer';
-
 import { Trending } from '../components/Trending';
+
+// Styles
+import styles from '/styles/Home.module.css';
+
 
 export default function Home() {
 
@@ -12,16 +14,12 @@ export default function Home() {
         <div className={ styles.container }>
 
             <Header />
-
             <Nav />
 
-            <main>
-          
-                <Trending />
-
-            </main>
+            <Trending />
 
             <Footer />
+
         </div>
     ); // End return
   

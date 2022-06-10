@@ -1,13 +1,13 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
+// Libraries
 import { useRouter } from 'next/router';
 
-import styles from '/styles/Home.module.css';
-
+// Functions
 import { Header } from '../../components/Header';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
+
+// Styles
+import styles from '/styles/Home.module.css';
 
 
 export default function Home() {
@@ -15,25 +15,25 @@ export default function Home() {
     const router = useRouter();
     const { id } = router.query;
 
-  return (
-    <div className={ styles.container }>
+    return (
+        <div className={ styles.container }>
 
-      <Header />
+            <Header />
+            <Nav />
 
-      <Nav />
+            <main className={ styles.main }>
 
-      <main className={ styles.main }>
+                <h1>
+                    <a>
+                        Movie [ { id } ]
+                    </a>
+                </h1>
 
-        <h1>
-          <a>
-            Movie [ { id } ]
-          </a>
-        </h1>
+            </main>
 
-      </main>
+            <Footer />
 
-      <Footer />
-    </div>
-  ); // End return
+        </div>
+    ); // End return
 
 }

@@ -1,7 +1,9 @@
+// Libraries
 import Head from 'next/head';
-import Image from 'next/image';
 
+// Styles
 import styles from './Header.module.css';
+
 
 export default function Header () {
 

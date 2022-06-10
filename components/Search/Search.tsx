@@ -1,9 +1,16 @@
+// Libraries
 import React, { useState } from 'react';
 
+// Functions
 import { Trending } from '../Trending';
 
+// Styles
 import styles from './Search.module.css';
 
+
+// API data
+const api_key="6c0d3427fcf17ddf80d04106c35a3a98";
+const api_url = `https://api.themoviedb.org/3/search/movie?api_key=${ api_key }`;
 
 export default function Search() {
 
@@ -11,20 +18,20 @@ export default function Search() {
 
     const [ movies, setMovies ] = useState( [] );
 
-    const api_key="6c0d3427fcf17ddf80d04106c35a3a98";
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${ api_key }&query=${ query }`;
+    const append = `&query=${ query }`; // Add anything to be appended into URL here
+    const url = api_url.concat( append ); // Concatenate the URL with whatever to be appended
 
     const searchMovies = async ( e ) => {
 
-        e.preventDefault();
+        e.preventDefault(); // Prevents search from resetting near instantly
 
-        console.log( "submitting..." );
+        console.log( "-- Search Query Submitted --" ); // Debugging purposes
 
         try {
-            const res = await fetch( url );
-            const data = await res.json();
-            console.log( data.results );
-            setMovies( data.results );
+            const res = await fetch( url ); // Stores the results from API fetch into res
+            const data = await res.json(); // Parses into JSON format
+            console.log( data.results ); // Debugging purposes
+            setMovies( data.results ); // Stores the results of the API fetch response into movies array
         }
         catch( err ) {
             console.error( err );
@@ -60,7 +67,9 @@ export default function Search() {
                 <div className={ styles.movielist }>
 
                     { movies.filter( movie => movie.poster_path ).map( movie => (
-                        <div className={ styles.moviecard }>
+                        <div className={ styles.moviecard } key={ movie.id }>
+
+                            { /* Look into using a render function to remove inline stuff */ }
                             
                             <img
                                 key={ movie.id }

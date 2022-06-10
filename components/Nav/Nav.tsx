@@ -1,6 +1,9 @@
+// Libraries
 import Link from 'next/link';
 
+// Styles
 import styles from './Nav.module.css';
+
 
 export default function Nav() {
 

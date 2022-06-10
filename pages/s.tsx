@@ -1,27 +1,26 @@
-import styles from '/styles/Home.module.css';
-
+// Functions
 import { Header } from '../components/Header';
 import { Nav } from '../components/Nav';
 import { Footer } from '../components/Footer';
 import { Search } from '../components/Search'
 
+// Styles
+import styles from '/styles/Home.module.css';
+
+
 export default function Home() {
 
-  return (
-    <div className={ styles.container }>
+    return (
+        <div className={ styles.container }>
 
-      <Header />
+            <Header />
+            <Nav />
 
-      <Nav />
+            <Search />
 
-      <main>
+            <Footer />
 
-        <Search />
-
-      </main>
-
-      <Footer />
-    </div>
-  ); // End return
+        </div>
+    ); // End return
   
 }

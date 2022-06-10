@@ -1,32 +1,29 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-
-import styles from '/styles/Home.module.css';
-
+// Functions
 import { Header } from '../components/Header';
 import { Nav } from '../components/Nav';
 import { Footer } from '../components/Footer';
 
+// Styles
+import styles from '/styles/Home.module.css';
+
 export default function Home() {
 
-  return (
-    <div className={ styles.container }>
+    return (
+        <div className={ styles.container }>
 
-      <Header />
+            <Header />
+            <Nav />
 
-      <Nav />
-
-      <main className={ styles.main }>
+            <main className={ styles.main }>
         
-        <h1 className={ styles.title }>
-          Welcome to Movies Database!
-        </h1>
+                <h1 className={ styles.title }>
+                    Welcome to Movies Database!
+                </h1>
         
-      </main>
+            </main>
 
-      <Footer />
-    </div>
-  ); // End return
-  
+            <Footer />
+            
+        </div>
+    ); // End return
 }

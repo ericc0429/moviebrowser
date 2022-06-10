@@ -1,15 +1,19 @@
-import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event';
+// Libraries
 import React, { useState, useEffect } from 'react';
 
+// Functions
+
+// Styles
 import styles from './Trending.module.css';
 
+
+// API data
+const api_key="6c0d3427fcf17ddf80d04106c35a3a98";
+const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${ api_key }`;
 
 export default function Trending() {
 
     const [ movies, setMovies ] = useState( [] );
-
-    const api_key="6c0d3427fcf17ddf80d04106c35a3a98";
-    const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${ api_key }`;
 
     const getTrending = async () => {
     // const getTrending = async ( e ) => {
@@ -18,7 +22,9 @@ export default function Trending() {
 
         // console.log( "submitting..." );
 
-        try {
+        console.log( "-- Trending Movies Loaded --" ) // Debugging purposes
+
+        try { // Parse data and store into movies array
             const res = await fetch( url );
             const data = await res.json();
             console.log( data.results );
@@ -30,9 +36,9 @@ export default function Trending() {
 
     };
 
-    useEffect( () => {
+    useEffect( () => { // Runs function getTrending on page load. (Runs every time page is loaded)
         getTrending();
-    } )
+    }, [] ) // The null array here is required to prevent useEffect from spamming API database.
 
     return( 
         <div >
@@ -42,7 +48,7 @@ export default function Trending() {
                 <div id="list" className={ styles.trendlist }>
 
                     { movies.filter( movie => movie.poster_path ).map( movie => (
-                        <div className={ styles.moviecard }>
+                        <div className={ styles.moviecard } key={ movie.id }>
                             
                             <img
                                 key={ movie.id }
