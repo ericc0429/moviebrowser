@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 
 // Functions
+import { Results } from '../Results';
 import { Trending } from '../Trending';
 
 // Styles
@@ -21,12 +22,13 @@ export default function Search() {
     const append = `&query=${ query }`; // Add anything to be appended into URL here
     const url = api_url.concat( append ); // Concatenate the URL with whatever to be appended
 
+    // Search function
     const searchMovies = async ( e ) => {
 
         e.preventDefault(); // Prevents search from resetting near instantly
 
-        console.log( "-- Search Query Submitted --" ); // Debugging purposes
-
+        console.log( "-- Submitting Search Query --" ); // Debugging purposes
+        
         try {
             const res = await fetch( url ); // Stores the results from API fetch into res
             const data = await res.json(); // Parses into JSON format
@@ -41,7 +43,6 @@ export default function Search() {
 
     return (
         <div>
-
             <main className={ styles.main }>
 
                 <form
@@ -64,39 +65,15 @@ export default function Search() {
 
                 </form>
 
-                <div className={ styles.movielist }>
-
-                    { movies.filter( movie => movie.poster_path ).map( movie => (
-                        <div className={ styles.moviecard } key={ movie.id }>
-
-                            { /* Look into using a render function to remove inline stuff */ }
-                            
-                            <img
-                                key={ movie.id }
-                                src={ `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${ movie.poster_path }` }
-                                alt={ movie.title + " Poster" }
-                            />
-
-                            <div className={ styles.moviedata }>
-                                <h3>{ movie.title }</h3>
-                                <p><small>Release Date: { movie.release_date }</small></p>
-                                <p><small>Rating: { movie.vote_average }</small></p>
-                            </div>
-                            <p className={ styles.moviedesc }>{ movie.overview }</p>
-
-
-                        </div>
-                    ) ) }
-
-                </div>
-
-                <div className={ styles.trending }>Now Trending</div>
+                <Results 
+                    movies={ movies }
+                    isTrend={ false }
+                />
 
                 <Trending />
-                
 
             </main>
-      </div>
-    ); // End return
-  
+
+        </div>
+    );
 }

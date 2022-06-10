@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Functions
+import { Results } from '../Results'
 
 // Styles
 import styles from './Trending.module.css';
@@ -22,7 +23,7 @@ export default function Trending() {
 
         // console.log( "submitting..." );
 
-        console.log( "-- Trending Movies Loaded --" ) // Debugging purposes
+        console.log( "-- Loading Trending Movies --" ) // Debugging purposes
 
         try { // Parse data and store into movies array
             const res = await fetch( url );
@@ -40,36 +41,19 @@ export default function Trending() {
         getTrending();
     }, [] ) // The null array here is required to prevent useEffect from spamming API database.
 
-    return( 
-        <div >
-
+    return (
+        <div>
             <main className={ styles.main }>
 
-                <div id="list" className={ styles.trendlist }>
+                <div className={ styles.trending }>Now Trending</div>
 
-                    { movies.filter( movie => movie.poster_path ).map( movie => (
-                        <div className={ styles.moviecard } key={ movie.id }>
-                            
-                            <img
-                                key={ movie.id }
-                                src={ `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${ movie.poster_path }` }
-                                alt={ movie.title + " Poster" }
-                                className={ styles.poster }
-                            />
+                <Results
+                    movies={ movies }
+                    isTrend={ true }
+                />
 
-                            <div className={ styles.moviedata }>
-                                <h3>{ movie.title }</h3>
-                            </div>
-
-
-                        </div>
-                    ) ) }
-
-                </div>
-                
             </main>
-
         </div>
-    ); // End return
+    ); // End Return
 
 }
