@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 
 // Functions
-import { Results } from '../Results';
-import { Trending } from '../Trending';
+import { Results } from 'components/Results';
+import { Trending } from 'components/Trending';
 
 // Styles
 import styles from './Search.module.css';

@@ -1,10 +1,10 @@
 // Functions
-import { Header } from '../components/Header';
-import { Nav } from '../components/Nav';
-import { Footer } from '../components/Footer';
+import { Header } from 'components/Header';
+import { Nav } from 'components/Nav';
+import { Footer } from 'components/Footer';
 
 // Styles
-import styles from '/styles/Home.module.css';
+import styles from 'styles/Home.module.css';
 
 export default function Home() {
 

@@ -1,6 +1,6 @@
 // Styles
-import trendcss from '../Trending/Trending.module.css';
-import searchcss from '../Search/Search.module.css';
+import trendcss from 'components/Trending/Trending.module.css';
+import searchcss from 'components/Search/Search.module.css';
 
 export default function Results ( props: any ) {
 

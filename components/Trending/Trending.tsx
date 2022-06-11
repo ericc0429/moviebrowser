@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Functions
-import { Results } from '../Results'
+import { Results } from 'components/Results'
 
 // Styles
 import styles from './Trending.module.css';
