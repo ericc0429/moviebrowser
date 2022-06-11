@@ -5,12 +5,13 @@ import { useRouter } from 'next/router';
 import { Header } from 'components/Header';
 import { Nav } from 'components/Nav';
 import { Footer } from 'components/Footer';
+import { Movie } from 'components/Movie';
 
 // Styles
 import styles from 'styles/Home.module.css';
 
 
-export default function Home() {
+export default function Main () {
 
     const router = useRouter();
     const { id } = router.query;
@@ -21,15 +22,9 @@ export default function Home() {
             <Header />
             <Nav />
 
-            <main className={ styles.main }>
-
-                <h1>
-                    <a>
-                        Movie [ { id } ]
-                    </a>
-                </h1>
-
-            </main>
+            <Movie
+                id={ id }
+            />
 
             <Footer />
 

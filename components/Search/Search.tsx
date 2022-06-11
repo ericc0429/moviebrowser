@@ -6,6 +6,7 @@ import { Results } from 'components/Results';
 import { Trending } from 'components/Trending';
 
 // Styles
+import sbstyles from './Searchbar.module.css';
 import styles from './Search.module.css';
 
 
@@ -43,16 +44,16 @@ export default function Search() {
 
     return (
         <div>
-            <main className={ styles.main }>
+            <main className={ sbstyles.main }>
 
                 <form
-                    className={ styles.search }
+                    className={ sbstyles.search }
                     onSubmit={ searchMovies }
                 >
 
                     <input
                         type="text"
-                        className={ styles.input }
+                        className={ sbstyles.input }
                         placeholder="movie"
                         value={ query }
                         onChange={ ( e ) => setQuery( e.target.value ) }
@@ -60,7 +61,7 @@ export default function Search() {
 
                     <button
                         type="submit"
-                        className={ styles.button }
+                        className={ sbstyles.button }
                     >Search</button>
 
                 </form>
@@ -73,7 +74,6 @@ export default function Search() {
                 <Trending />
 
             </main>
-
         </div>
     );
 }

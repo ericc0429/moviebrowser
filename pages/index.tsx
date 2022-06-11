@@ -6,7 +6,7 @@ import { Footer } from 'components/Footer';
 // Styles
 import styles from 'styles/Home.module.css';
 
-export default function Home() {
+export default function Main () {
 
     return (
         <div className={ styles.container }>

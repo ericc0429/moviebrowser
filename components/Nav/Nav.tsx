@@ -18,7 +18,7 @@ export default function Nav() {
                 <a className={ styles.navcard }>Now Trending</a>
             </Link>
 
-            <Link href="/s">
+            <Link href="/search">
                 <a className={ styles.navcard }>Search</a>
             </Link>
 

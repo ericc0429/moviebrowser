@@ -24,17 +24,20 @@
     text-decoration: none;
     border: 1px hidden #7c7c7c;
     border-radius: 10px;
-    transition: background-color 0.5s, border-radius 1s;
+    transition: color 0.3s;
+    /*transition: background-color 0.5s, border-radius 1s;*/
     max-width: 300px;
 }
 
 .navcard:hover,
 .navcard:focus,
 .navcard:active {
-    /* color: #ffffff;*/
+    color: #2571ff;
     /*border-color: #0070f3; */
+    /*
     border: 0;
     outline: 0;
     border-radius: 8px;
     background-color: #97c7ff;
+    */
 }

@@ -8,7 +8,7 @@ import { Search } from 'components/Search'
 import styles from 'styles/Home.module.css';
 
 
-export default function Home() {
+export default function Main () {
 
     return (
         <div className={ styles.container }>
