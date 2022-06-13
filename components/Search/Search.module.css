@@ -34,11 +34,16 @@
     color: inherit;
     text-decoration: none;
 
-    border: 1px solid #7c7c7c;
+    border: 2px solid #7c7c7c;
     border-radius: 10px;
     background-color: #ffffff;
 
-    transition: background-color 0.5s, border-radius 1s;
+    transition: border-color 0.5s;
+}
+.moviecard:hover,
+.moviecard:focus {
+    border: 2px solid #2571ff;
+    cursor: pointer;
 }
 
 .moviedata {
