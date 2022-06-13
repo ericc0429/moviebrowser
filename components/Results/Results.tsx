@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 // Styles
-import styles from 'components/Results/Results.module.css';
+// import styles from 'components/Results/Results.module.css';
 import trendcss from 'components/Trending/Trending.module.css';
 import searchcss from 'components/Search/Search.module.css';
 
