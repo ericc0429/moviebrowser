@@ -27,7 +27,7 @@ export default function Results ( props: any ) {
 
                     <Link href={ "/movie/".concat( movie.id ) }>
 
-                        <div>
+                        <div className={ customStyles.movieattributes }>
 
                             <img
                                 key={ movie.id }
@@ -37,7 +37,6 @@ export default function Results ( props: any ) {
                             />
 
                             { getMovieData( movie, props.isTrend, customStyles ) }
-
 
                         </div>
 
