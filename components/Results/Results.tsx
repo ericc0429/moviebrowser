@@ -1,6 +1,9 @@
 // Libraries
 import Link from 'next/link';
 
+// Functions
+import { Favorites } from 'components/Favorites'
+
 // Styles
 // import styles from 'components/Results/Results.module.css';
 import trendcss from 'components/Trending/Trending.module.css';
@@ -35,9 +38,14 @@ export default function Results ( props: any ) {
 
                             { getMovieData( movie, props.isTrend, customStyles ) }
 
+
                         </div>
 
                     </Link>
+
+                    <Favorites
+                        id={ movie.id }
+                    />
 
                 </div>
 
