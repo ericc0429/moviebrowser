@@ -1,6 +1,6 @@
 
-.favbuttonoff {
-    padding: 0rem 0.5rem 0.2rem 0.5rem;
+.favButtonOff {
+    padding: 0rem 0.5rem 0.2rem;
     margin: 0rem 5rem;
 
     color: black;
@@ -9,8 +9,8 @@
     border: 2px solid #333333;
     border-radius: 10px;
 }
-.favbuttonon {
-    padding: 0rem 0.5rem 0.2rem 0.5rem;
+.favButtonOn {
+    padding: 0rem 0.5rem 0.2rem;
     margin: 0rem 5rem;
 
     color: white;

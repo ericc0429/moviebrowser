@@ -28,7 +28,7 @@ export default function Favorites ( props: any ) {
         >
             <button 
                 type="submit"
-                className={ isFav ? styles.favbuttonon : styles.favbuttonoff }
+                className={ isFav ? styles.favButtonOn : styles.favButtonOff }
             >
                 { getFavLogo( isFav ) }
             </button>
@@ -41,7 +41,7 @@ function setFav( id: number, setter: Function ) {
     // Check if the favorites list already exists in localStorage:
     if ( localStorage.getItem( "favorites" ) ) { // Favorites list was in localStorage; update for current movie
 
-        var favList = JSON.parse( localStorage[ "favorites" ] ); // Get favorites
+        const favList = JSON.parse( localStorage[ "favorites" ] ); // Get favorites
         
         // Check if favorites list contains the current movie's id
         if ( favList.indexOf( id ) == -1 ) { // Doesn't contain it: Add current movie id (Favorite)
