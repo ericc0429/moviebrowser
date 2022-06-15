@@ -1,6 +1,9 @@
 // Libraries
 import React, { useState } from 'react';
 
+// Functions
+import useToggleMovieFav from './ToggleFav';
+
 // Styles
 import styles from './Favorites.module.css';
 
@@ -8,23 +11,30 @@ import styles from './Favorites.module.css';
 const stars = [ "☆", "★" ];
 
 
-export default function Favorites ( props: any ) {
+interface FavItems {
+    id: number;
+}
 
-    const [ isFav, setIsFav ] = useState( isInLS( props.id ) );
+export default function Favorites ( { id }: FavItems ) {
 
-    const toggleFav = async (e) => {
+    const [ isFav, toggleFav ] = useToggleMovieFav( id );
 
-        e.preventDefault();
+    //console.log( isFav );
+
+    const setFav = async (e) => {
+
+        //e.preventDefault();
 
         // console.log( `--- Setting isFav for ${ props.id } to ${ !isFav } ---` );
+        toggleFav();
         
-        setFav( props.id, setIsFav );
+        // setFav( props.id, setIsFav );
 
     }
 
     return (
         <form
-            onSubmit={ toggleFav }
+            onSubmit={ setFav }
         >
             <button 
                 type="submit"
@@ -34,63 +44,10 @@ export default function Favorites ( props: any ) {
             </button>
         </form>
     );
+    
 }
 
 
-function setFav( id: number, setter: Function ) {
-    // Check if the favorites list already exists in localStorage:
-    if ( localStorage.getItem( "favorites" ) ) { // Favorites list was in localStorage; update for current movie
-
-        const favList = JSON.parse( localStorage[ "favorites" ] ); // Get favorites
-        
-        // Check if favorites list contains the current movie's id
-        if ( favList.indexOf( id ) == -1 ) { // Doesn't contain it: Add current movie id (Favorite)
-            // Add movie id to favorites list
-            favList.push( id );
-            setter( true );
-
-            console.log( `--- Added movie [ ${ id } ] to favList ---` ); // Debug
-            console.log( favList );
-        }
-        else { // Contains it: Remove current movie id (Unfavorite)
-            // Remove movie id from favorites list
-            var index = favList.indexOf( id );
-            favList.splice( index, 1 );
-            setter( false );
-
-            console.log( `--- Removed movie [ ${ id } ] from favList ---` ); // Debug
-            console.log( favList );
-        }
-
-        localStorage.setItem( "favorites", JSON.stringify( favList ) ); // Update favorites
-
-    }
-    else { // Favorites list wasn't in localStorage; Add new array.
-
-        // Create new array and append movie id, update page accordingly
-        var newFav = [];
-        newFav.push( id );
-        setter( true );
-
-        // Update favorites list in localStorage
-        localStorage.setItem( "favorites", JSON.stringify( newFav ) );
-        console.log( `--- Created new favList ---` ); // Debug
-
-    }
-}
-
-// Helper function for useState to check if the movie was already favorited in localStorage.
-function isInLS( id: number ) {
-    if ( localStorage.getItem( "favorites" ) ) {
-        var favList = JSON.parse( localStorage[ "favorites" ] );
-        if ( favList.indexOf( id ) != -1 ) {
-            return true;
-        }
-        else return false;
-    }
-    else return false;
-}
-
-function getFavLogo ( isFav: Boolean ) {
+function getFavLogo ( isFav: boolean ) {
     return stars[ Number( isFav ) ];
 }
