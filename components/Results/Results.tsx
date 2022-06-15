@@ -1,9 +1,6 @@
 // Libraries
 import Link from 'next/link';
 
-// Functions
-import { Favorites } from 'components/Favorites'
-
 // Styles
 // import styles from 'components/Results/Results.module.css';
 import trendcss from 'components/Trending/Trending.module.css';
@@ -27,7 +24,7 @@ export default function Results ( props: any ) {
 
                     <Link href={ "/movie/".concat( movie.id ) }>
 
-                        <div className={ customStyles.movieattributes }>
+                        <div>
 
                             <img
                                 key={ movie.id }
@@ -41,10 +38,6 @@ export default function Results ( props: any ) {
                         </div>
 
                     </Link>
-
-                    <Favorites
-                        id={ movie.id }
-                    />
 
                 </div>
 

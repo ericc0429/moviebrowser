@@ -62,9 +62,7 @@ export default function Search() {
                     <button
                         type="submit"
                         className={ sbstyles.button }
-                    >
-                        Search
-                    </button>
+                    >Search</button>
 
                 </form>
 
