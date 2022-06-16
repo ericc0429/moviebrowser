@@ -44,6 +44,7 @@ export default function Results ( props: any ) {
 
                     <Favorites
                         id={ movie.id }
+                        useLogo={ true }
                     />
 
                 </div>

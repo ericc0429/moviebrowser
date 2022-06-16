@@ -1,6 +1,9 @@
 // Libraries
 import React, { useState, useEffect } from 'react';
 
+// Functions
+import { Favorites } from 'components/Favorites';
+
 // Styles
 import styles from 'components/Movie/Movie.module.css';
 
@@ -60,6 +63,11 @@ export default function Movie ( props ) {
                             />
 
                             <a className={ styles.linkbutton } href={ movie.homepage }>Watch Now</a>
+
+                            <Favorites 
+                                id={ movie.id }
+                                useLogo={ false }
+                            />
 
                         </div>
 

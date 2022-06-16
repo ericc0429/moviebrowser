@@ -11,7 +11,9 @@ export default function Main () {
     return (
         <div className={ styles.container }>
 
-            <Header />
+            <Header
+                pageName={ "Home" }
+            />
             <Nav />
 
             <main className={ styles.main }>

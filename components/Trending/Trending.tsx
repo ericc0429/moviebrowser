@@ -21,8 +21,6 @@ export default function Trending() {
 
         // e.preventDefault();
 
-        // console.log( "submitting..." );
-
         console.log( "-- Loading Trending Movies --" ) // Debugging purposes
 
         try { // Parse data and store into movies array
@@ -39,6 +37,7 @@ export default function Trending() {
 
     useEffect( () => { // Runs function getTrending on page load. (Runs every time page is loaded)
         getTrending();
+        // console.log( "useEffect called" );
     }, [] ) // The null array here is required to prevent useEffect from spamming API database.
 
     return (

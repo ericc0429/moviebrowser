@@ -1,37 +1,46 @@
 // Libraries
-import React, { useState } from 'react';
+import React from 'react';
 
 // Functions
-import useToggleMovieFav from './ToggleFav';
+import useToggleFav from './useToggleFav';
 
 // Styles
 import styles from './Favorites.module.css';
 
 // Array for star. Use index 0 for not favorited, index 1 for favorited
 const stars = [ "☆", "★" ];
+const favText = [ "Favorite", "Favorited" ]
+
+// What we want the key's name to be (Put here to make it more straightforward to change)
+const favLSKey = "favorites";
 
 
 interface FavItems {
     id: number;
+    useLogo: boolean
 }
 
-export default function Favorites ( { id }: FavItems ) {
+export default function Favorites ( { id, useLogo }: FavItems ) {
 
-    const [ isFav, toggleFav ] = useToggleMovieFav( id );
-
-    //console.log( isFav );
+    const [ isFav, toggleFav ] = useToggleFav( favLSKey, id );
 
     const setFav = async (e) => {
 
         //e.preventDefault();
 
-        // console.log( `--- Setting isFav for ${ props.id } to ${ !isFav } ---` );
-        toggleFav();
-        
-        // setFav( props.id, setIsFav );
+        const test = toggleFav();
+        console.log( `-- Movie [ ${id} ] ${test ? "favorited" : "unfavorited" } --` );
 
     }
 
+    return (
+        <button onClick={ setFav }
+        className={ useLogo ? ( isFav ? styles.favButtonOn : styles.favButtonOff ) : ( isFav ? styles.favTextOn : styles.favTextOff ) }>
+            { useLogo ? stars[ Number( isFav ) ] : favText[ Number( isFav ) ] }
+        </button>
+    );
+
+    /* OLD BUTTON
     return (
         <form
             onSubmit={ setFav }
@@ -40,14 +49,11 @@ export default function Favorites ( { id }: FavItems ) {
                 type="submit"
                 className={ isFav ? styles.favButtonOn : styles.favButtonOff }
             >
-                { getFavLogo( isFav ) }
+                { stars[ Number( isFav ) ] }
             </button>
         </form>
     );
+    */
     
 }
 
-
-function getFavLogo ( isFav: boolean ) {
-    return stars[ Number( isFav ) ];
-}
