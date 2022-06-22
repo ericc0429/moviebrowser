@@ -1,44 +1,29 @@
 // Libraries
-import React from 'react';
+import React from "react";
+import cx from "classnames";
 
 // Functions
-import useToggleFav from './useToggleFav';
+import useToggleFav from "./useToggleFav";
 
 // Styles
-import styles from './Favorites.module.css';
+import styles from "./Favorites.module.css";
 
-// Array for star. Use index 0 for not favorited, index 1 for favorited
-const stars = [ "☆", "★" ];
-const favText = [ "Favorite", "Favorited" ]
-
-// What we want the key's name to be (Put here to make it more straightforward to change)
-const favLSKey = "favorites";
-
-
-interface FavItems {
-    id: number;
-    useLogo: boolean
+interface IFavItemProps {
+  id: number;
+  variant: "icon" | "text";
 }
 
-export default function Favorites ( { id, useLogo }: FavItems ) {
+export default function Favorites({ id, variant }: IFavItemProps) {
+  const [isFav, toggleFav] = useToggleFav(id);
 
-    const [ isFav, toggleFav ] = useToggleFav( favLSKey, id );
-
-    const setFav = async (e) => {
-
-        //e.preventDefault();
-
-        const test = toggleFav();
-        console.log( `-- Movie [ ${id} ] ${test ? "favorited" : "unfavorited" } --` );
-
-    }
-
-    return (
-        <button onClick={ setFav }
-        className={ useLogo ? ( isFav ? styles.favButtonOn : styles.favButtonOff ) : ( isFav ? styles.favTextOn : styles.favTextOff ) }>
-            { useLogo ? stars[ Number( isFav ) ] : favText[ Number( isFav ) ] }
-        </button>
-    );
-    
+  return (
+    <button
+      onClick={toggleFav}
+      className={cx([
+        styles.button,
+        styles[`variant__${variant}`],
+        { [styles.isFav]: isFav },
+      ])}
+    ></button>
+  );
 }
-

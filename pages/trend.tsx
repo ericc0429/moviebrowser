@@ -16,7 +16,6 @@ export default function Main () {
             <Header
                 pageName={ "Trending" }
             />
-            <Nav />
 
             <Trending />
 

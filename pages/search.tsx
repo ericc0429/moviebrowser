@@ -16,7 +16,6 @@ export default function Main () {
             <Header
                 pageName={ "Search" }
             />
-            <Nav />
 
             <Search />
 

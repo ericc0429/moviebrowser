@@ -14,7 +14,6 @@ export default function Main () {
             <Header
                 pageName={ "Home" }
             />
-            <Nav />
 
             <main className={ styles.main }>
         

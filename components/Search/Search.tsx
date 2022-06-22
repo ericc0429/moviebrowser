@@ -43,7 +43,7 @@ export default function Search() {
     }
 
     return (
-        <div>
+        <>
             <main className={ sbstyles.main }>
 
                 <form
@@ -76,6 +76,6 @@ export default function Search() {
                 <Trending />
 
             </main>
-        </div>
+        </>
     );
 }

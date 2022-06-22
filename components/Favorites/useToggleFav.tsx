@@ -1,59 +1,39 @@
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 
-export default function useToggleFav ( key: string, id: number ) {
+// What we want the key's name to be (Put here to make it more straightforward to change)
+const Key = "favorites";
 
-    const [ defaultFav, setIsFav ] = useState( false );
+export default function useToggleFav(id: number) {
+  const [isFav, setIsFav] = useState(() => {
+    if (typeof window !== undefined) return isMovieInFav(id);
+  });
 
-    let isFav = defaultFav;
+  // setter function to be returned
+  const toggleFav = () => {
+    setIsFav((currFav) => !currFav);
+    updateLS(id, isFav);
+  };
 
-    if ( typeof window === undefined ) isFav = defaultFav;
-
-    // JSON string with key's value
-    const fav = window.localStorage.getItem( key );
-
-    if ( fav != null && JSON.parse( fav ).indexOf( id ) !== -1 ) isFav = true;
-    else if ( fav != null ) isFav = false;
-    else {
-        window.localStorage.setItem( key, JSON.stringify( [] ) );
-        isFav = false;
-    }
-
-    // setter function to be returned
-    const toggleFav = () => {
-        setIsFav( !isFav );
-        updateLS( key, id );
-        return !isFav; // Return updated isFav for debug purposes.
-    }
-
-    return [ isFav, toggleFav ] as const;
+  return [isFav, toggleFav] as const;
 }
 
-// Helper function to update localStorage for given key.
-function updateLS( key: string, id: number ) {
+function isMovieInFav(id: number) {
+  const data = JSON.parse(window.localStorage.getItem(Key));
 
-    //if ( typeof window !== "undefined" ) {
-            
-        // fav - JSON string containing the value at key
-        const fav = localStorage.getItem( key );
+  // Local Storage Item does not exist
+  if (!data?.length) return false;
 
-        if ( fav !== null ) { // If the array is initialized (which it should be)
-        
-            // favArr - parsed array for appending/removing favorited movies
-            const favArr = JSON.parse( fav );
+  // Find item in array
+  return !!data.find((i) => i === id);
+}
 
-            // Add movie-to-be-favorited ID to favArr
-            if ( favArr.indexOf( id ) == -1 ) favArr.push( id );
-            // Remove movie-to-be-favorited ID from favArr
-            else favArr.splice( favArr.indexOf( id ), 1 );
+function updateLS(id: number, isFav: boolean) {
+  const data = JSON.parse(window.localStorage.getItem(Key)) || [];
 
-            // Update key's value in localStorage and return updated favArr
-            localStorage.setItem( key, JSON.stringify( favArr ) );
-            return favArr;
-            //window.localStorage.setItem( key, JSON.stringify( id ) );
-        }
-        else { // This should never be called but just in case
-            window.localStorage.setItem( key, JSON.stringify( [ id ] ) );
-            return [ id ];
-        }
+  // Either add or remove the id to/from array
+  const newData = data.includes(id)
+    ? JSON.stringify(data.filter((i) => i !== id))
+    : JSON.stringify([...data, id]);
 
+  window.localStorage.setItem(Key, newData);
 }
