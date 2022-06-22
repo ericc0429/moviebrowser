@@ -1,5 +1,5 @@
 import React from "react";
-import cx from "classname";
+import cx from "classnames";
 import useToggleFav from "./useToggleFav";
 
 import styles from "./Favorites.module.css";
