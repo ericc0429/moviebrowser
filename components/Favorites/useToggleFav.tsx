@@ -1,39 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
-
-
-/*
-export default function FavStatus( props ) {
-    
-    const [ isFav, toggleFav ] = useToggleMovieFav( props.id );
-
-}
-*/
-
 export default function useToggleFav ( key: string, id: number ) {
 
-    const [ isFav, setIsFav ] = useState( () => {
+    const [ defaultFav, setIsFav ] = useState( false );
 
-        if ( typeof window !== "undefined" ) {
+    let isFav = defaultFav;
 
-            // JSON string with key's value
-            const fav = window.localStorage.getItem( key );
+    if ( typeof window === undefined ) isFav = defaultFav;
 
-            // Check if key is in localStorage
-            if ( fav != null ) {
-                // parsed array
-                const favArr = JSON.parse( fav );
-                
-                // Get default value of each movie rendered
-                if ( favArr.indexOf( id ) == -1 ) return false; // id not found in key's value, so initialize as false
-                else return true; // id found in key's value, initialize as true
-            }
-            else { // key doesn't exist in localStorage, so make an empty list
-                window.localStorage.setItem( key, JSON.stringify( [] ) );
-                return false;
-            }
-        }
-    } );
+    // JSON string with key's value
+    const fav = window.localStorage.getItem( key );
+    
+    if ( fav != null && JSON.parse( fav ).indexOf( id ) !== -1 ) isFav = true;
+    else if ( fav != null ) isFav = false;
+    else {
+        window.localStorage.setItem( key, JSON.stringify( [] ) );
+        isFav = false;
+    }
 
     // setter function to be returned
     const toggleFav = () => {
