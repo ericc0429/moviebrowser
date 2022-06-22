@@ -39,21 +39,6 @@ export default function Favorites ( { id, useLogo }: FavItems ) {
             { useLogo ? stars[ Number( isFav ) ] : favText[ Number( isFav ) ] }
         </button>
     );
-
-    /* OLD BUTTON
-    return (
-        <form
-            onSubmit={ setFav }
-        >
-            <button 
-                type="submit"
-                className={ isFav ? styles.favButtonOn : styles.favButtonOff }
-            >
-                { stars[ Number( isFav ) ] }
-            </button>
-        </form>
-    );
-    */
     
 }
 
