@@ -1,58 +1,26 @@
-
-.favButtonOff {
-    padding: 0rem 0.5rem 0.2rem;
-    margin: 0rem 5rem;
-
-    color: black;
-    background-color: white;
-
-    border: 2px solid #333333;
-    border-radius: 10px;
-}
-.favButtonOn {
-    padding: 0rem 0.5rem 0.2rem;
-    margin: 0rem 5rem;
-
-    color: white;
-    background-color: #2571ff;
-
-    border: 2px solid #2571ff;
-    border-radius: 10px;
+/* Default Button */
+.button {
+  border: none;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 4rem;
 }
 
-.favTextOff {
-    padding: 0.3rem;
-    margin: 0.5rem;
-
-    align-self: center;
-
-    font-size: 1rem;
-    font-weight: medium;
-    text-align: center;
-    color: black;
-    background-color: white;
-
-    border: 2px solid #333333;
-    border-radius: 10px;
-
-    transition: color 0.5s, border-color 0.5s;
+/* Variants */
+.variant__icon {
+  cursor: pointer;
 }
-.favTextOff:hover {
-    color: #2571ff;
-    border-color: #2571ff;
+.variant__icon:after {
+  content: "☆";
 }
-.favTextOn {
-    padding: 0.3rem;
-    margin: 0.5rem;
+.variant__text:after {
+  content: "Favorite";
+}
 
-    align-self: center;
-
-    font-size: 1rem;
-    font-weight: medium;
-    text-align: center;
-    color: white;
-    background-color: #2571ff;
-
-    border: 2px solid #2571ff;
-    border-radius: 10px;
+.isFav.variant__icon:after {
+  content: "★";
+}
+.isFav.variant__text:after {
+  content: "Favorited";
 }
