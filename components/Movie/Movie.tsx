@@ -13,18 +13,11 @@ const api_url = `https://api.themoviedb.org/3/movie/`;
 
 export default function Movie(props) {
   const [movies, setMovies] = useState([]);
-  //const [ movie, setMovie ] = useState( {} );
 
   const append = `${props.id}?api_key=${api_key}`;
   const url = api_url.concat(append);
 
   const getData = async () => {
-    // const getTrending = async ( e ) => {
-
-    // e.preventDefault();
-
-    // console.log( "submitting..." );
-
     console.log(`-- Loading Movie [ ${props.id} ] Data --`); // Debugging purposes
 
     try {
