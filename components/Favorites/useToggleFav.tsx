@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function useToggleFav ( key: string, id: number ) {
 
@@ -55,5 +55,5 @@ function updateLS( key: string, id: number ) {
             window.localStorage.setItem( key, JSON.stringify( [ id ] ) );
             return [ id ];
         }
-        
+
 }
