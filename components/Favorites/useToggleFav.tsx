@@ -23,7 +23,7 @@ function updateLS(id: number, isFav: boolean) {
   window.localStorage.setItem(LS_KEY, newData);
 }
 
-export default function useToggleFav(id: number) {
+export default function useToggleFav(id: number): [boolean, () => void] {
   const [isFav, setIsFav] = useState(() => {
     if (typeof window !== "undefined") return movieInFavorites(id);
   });
