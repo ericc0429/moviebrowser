@@ -43,7 +43,7 @@ export default function Search() {
     }
 
     return (
-        <div>
+        <>
             <main className={ sbstyles.main }>
 
                 <form
@@ -62,7 +62,9 @@ export default function Search() {
                     <button
                         type="submit"
                         className={ sbstyles.button }
-                    >Search</button>
+                    >
+                        Search
+                    </button>
 
                 </form>
 
@@ -74,6 +76,6 @@ export default function Search() {
                 <Trending />
 
             </main>
-        </div>
+        </>
     );
 }

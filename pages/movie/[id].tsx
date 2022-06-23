@@ -20,7 +20,6 @@ export default function Main () {
         <div className={ styles.container }>
 
             <Header />
-            <Nav />
 
             <Movie
                 id={ id }

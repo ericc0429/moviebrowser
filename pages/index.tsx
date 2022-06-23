@@ -11,13 +11,14 @@ export default function Main () {
     return (
         <div className={ styles.container }>
 
-            <Header />
-            <Nav />
+            <Header
+                pageName={ "Home" }
+            />
 
             <main className={ styles.main }>
         
                 <h1 className={ styles.title }>
-                    Welcome to Movies Database!
+                    Welcome to Movie Browser!
                 </h1>
 
                 <a
@@ -32,6 +33,16 @@ export default function Main () {
                     movies that are currently trending, and 
                     allows for the user to search for a 
                     specific movie by name.
+                </p>
+
+                <p className={ styles.subtitle }>
+                    Changelog:
+                </p>
+
+                <p className={ styles.text }>
+                    + Added toggleable favorites functionality
+                    that is persistent across all pages, using
+                    localStorage.
                 </p>
         
             </main>

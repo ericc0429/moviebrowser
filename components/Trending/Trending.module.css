@@ -60,6 +60,14 @@
     cursor: pointer;
 }
 
+.movieattributes {
+    padding: 0rem;
+    margin: 0rem;
+
+    flex-grow: 5;
+    flex-shrink: 3;
+}
+
 .poster {
     padding: 0rem;
     margin: 0rem;

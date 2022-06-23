@@ -14,8 +14,15 @@
 
 .title {
     margin: 0;
-    line-height: 1.15;
+    line-height: 1;
     font-size: 3rem;
+    text-align: center;
+}
+
+.subtitle {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 2rem;
     text-align: center;
 }
 

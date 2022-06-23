@@ -13,8 +13,9 @@ export default function Main () {
     return (
         <div className={ styles.container }>
 
-            <Header />
-            <Nav />
+            <Header
+                pageName={ "Trending" }
+            />
 
             <Trending />
 

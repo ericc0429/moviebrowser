@@ -1,0 +1,69 @@
+/* Standard button format */
+.button {
+  color: black;
+  background-color: white;
+
+  border: 2px solid #333333;
+  border-radius: 10px;
+
+  transition: color 0.5s, border-color 0.5s, background-color 0.5s;
+}
+.button:hover {
+  color: white;
+  background-color: #2571ff;
+
+  border: 2px solid #2571ff;
+}
+
+/* Icon button - Not favorited */
+.variant__icon {
+  padding: 0rem 0.5rem 0.2rem;
+  margin: 0rem 1rem;
+}
+.variant__icon:after {
+  content: "☆";
+}
+
+/* Icon button - Favorited */
+.isFav.variant__icon {
+  color: white;
+  background-color: #2571ff;
+
+  border: 2px solid #2571ff;
+}
+.isFav.variant__icon:after {
+  content: "★";
+}
+
+/* Text button - Not favorited */
+.variant__text {
+  padding: 0.3rem;
+  margin: 0.5rem;
+
+  font-size: 1rem;
+  font-weight: medium;
+  text-align: center;
+  color: black;
+  background-color: white;
+
+  align-self: center;
+}
+.variant__text:after {
+  content: "Add to Favorites";
+}
+
+/* Text button - Favorited */
+.isFav.variant__text {
+  padding: 0.3rem;
+  margin: 0.5rem;
+
+  color: white;
+  background-color: #2571ff;
+
+  border: 2px solid #2571ff;
+
+  transition: color 0.5s, border-color 0.5s, background-color 0.5s;
+}
+.isFav.variant__text:after {
+  content: "Favorited";
+}
