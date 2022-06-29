@@ -13,6 +13,7 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-end;
+
   background-color: var(--header-color);
 }
 
@@ -20,8 +21,7 @@
   padding: 0rem;
   margin: 0rem;
 
-  order: 1;
-  flex-basis: 75%;
+  flex: 7;
 
   white-space: nowrap;
 }
@@ -51,14 +51,13 @@
   border-width: 2px;
   border-radius: 10px; */
 
-  flex: 1;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
 
-  order: 2;
+  flex: 1;
   align-self: flex-end;
 
   font-size: 1rem;
