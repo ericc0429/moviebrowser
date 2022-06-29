@@ -1,6 +1,7 @@
 // Libraries
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 // Components
 import Nav from "./Nav";
@@ -19,9 +20,15 @@ function Header(/*  { pageName }: any  */) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <p className={styles.header}>Movie Browser</p>
+      <div className={styles.headerBar}>
+        <div className={styles.header}>
+          <Link href="/">
+            <a className={styles.headerText}>Movie Browser</a>
+          </Link>
+        </div>
 
-      <Nav />
+        <Nav />
+      </div>
     </header>
   ); // End return
 }

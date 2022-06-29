@@ -19,26 +19,27 @@ function Results(props: any) {
 
   return (
     <div className={customStyles.movielist}>
-      {props.movies
-        .filter((movie) => movie.poster_path)
-        .map((movie) => (
-          <div className={customStyles.moviecard} key={movie.id}>
-            <Link href={"/movie/".concat(movie.id)}>
-              <div className={customStyles.movieattributes}>
-                <img
-                  key={movie.id}
-                  src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                  alt={movie.title + " Poster"}
-                  className={customStyles.poster}
-                />
+      {props.movies &&
+        props.movies
+          .filter((movie) => movie.poster_path)
+          .map((movie) => (
+            <div className={customStyles.moviecard} key={movie.id}>
+              <Link href={"/movie/".concat(movie.id)}>
+                <div className={customStyles.movieattributes}>
+                  <img
+                    key={movie.id}
+                    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                    alt={movie.title + " Poster"}
+                    className={customStyles.poster}
+                  />
 
-                {getMovieData(movie, props.isTrend, customStyles)}
-              </div>
-            </Link>
+                  {getMovieData(movie, props.isTrend, customStyles)}
+                </div>
+              </Link>
 
-            <FavoriteButton id={movie.id} variant={"icon"} />
-          </div>
-        ))}
+              <FavoriteButton id={movie.id} variant={"icon"} />
+            </div>
+          ))}
     </div>
   );
 }

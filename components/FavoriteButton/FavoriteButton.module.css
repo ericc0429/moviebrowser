@@ -1,18 +1,17 @@
 /* Standard button format */
 .button {
-  color: black;
-  background-color: white;
+  color: var(--text-color);
+  background-color: var(--card-color);
 
-  border: 2px solid #333333;
+  border: 2px solid var(--border-color);
   border-radius: 10px;
 
   transition: color 0.5s, border-color 0.5s, background-color 0.5s;
 }
 .button:hover {
-  color: white;
-  background-color: #2571ff;
+  background-color: var(--fav-color);
 
-  border: 2px solid #2571ff;
+  border: 2px solid var(--fav-color);
 }
 
 /* Icon button - Not favorited */
@@ -26,10 +25,10 @@
 
 /* Icon button - Favorited */
 .isFav.variant__icon {
-  color: white;
-  background-color: #2571ff;
+  color: var(--text-color);
+  background-color: var(--fav-color);
 
-  border: 2px solid #2571ff;
+  border: 2px solid var(--fav-color);
 }
 .isFav.variant__icon:after {
   content: "★";
@@ -43,8 +42,8 @@
   font-size: 1rem;
   font-weight: medium;
   text-align: center;
-  color: black;
-  background-color: white;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 
   align-self: center;
 }
@@ -57,10 +56,10 @@
   padding: 0.3rem;
   margin: 0.5rem;
 
-  color: white;
-  background-color: #2571ff;
+  color: var(--text-color);
+  background-color: var(--fav-color);
 
-  border: 2px solid #2571ff;
+  border: 2px solid var(--fav-color);
 
   transition: color 0.5s, border-color 0.5s, background-color 0.5s;
 }

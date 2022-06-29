@@ -1,5 +1,5 @@
 .main {
-  padding: 0rem;
+  padding: /* 1rem  */ 0rem;
   margin: 0rem;
 }
 
@@ -10,10 +10,11 @@
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
+  color: var(--text-color);
 
   width: 100%;
-  border-top: 1px solid #bdbdbd;
-  border-bottom: 1px solid #bdbdbd;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .movielist {
@@ -21,9 +22,6 @@
   margin: 0rem;
 
   border-style: hidden;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 10px;
 
   display: flex;
   flex-direction: row;
@@ -50,18 +48,19 @@
   align-items: center;
 
   text-align: center;
-  color: #2571ff;
+  color: var(--text-color);
   text-decoration: none;
 
-  border: 2px solid #7c7c7c;
+  border: 2px solid var(--border-color);
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: var(--card-color);
 
-  transition: border-color 0.5s;
+  transition: border-color 0.5s, color 0.5s;
 }
 .moviecard:hover,
 .moviecard:focus {
-  border: 2px solid #2571ff;
+  border: 2px solid var(--highlight-color);
+  color: var(--highlight-color);
   cursor: pointer;
 }
 
@@ -82,14 +81,3 @@
   padding: 0rem 0.5rem;
   margin: 0rem;
 }
-
-/*
-.moviecard:hover,
-.moviecard:focus,
-.moviecard:active {
-    border: 0;
-    outline: 0;
-    border-radius: 8px;
-    background-color: #97c7ff;
-}
-*/

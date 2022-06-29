@@ -1,52 +1,51 @@
 .container {
-    padding: 0 2rem;
+  padding: 0 2rem;
+
+  background-color: inherit;
 }
 
 .main {
-    min-height: 100vh;
-    padding: 2rem 0.2rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  min-height: 100vh;
+  padding: 2rem 0.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .title {
-    margin: 0;
-    line-height: 1;
-    font-size: 3rem;
-    text-align: center;
+  margin: 0;
+  line-height: 1;
+  font-size: 3rem;
+  text-align: center;
 }
 
 .subtitle {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 2rem;
-    text-align: center;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .text {
-    padding: 0 3rem;
-    margin: 0;
+  padding: 0 3rem;
+  margin: 0;
 
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .link {
-    padding: 0.5rem 0;
-    margin: 0;
+  padding: 0.5rem 0;
+  margin: 0;
 
-    font-size: 1rem;
-    font-weight: normal;
-    color: #2571ff;
-    transition: font-size 0.5s, color 0.5s, font-weight 0.5s;
+  font-size: 1rem;
+  font-weight: normal;
+  transition: font-size 0.5s, color 0.5s, font-weight 0.5s;
 }
 .link:hover {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #00ccff;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
-.link:visited {
-    color: #4e6bca;
-}
+/* .link:visited {
+} */

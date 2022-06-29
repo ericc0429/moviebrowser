@@ -18,20 +18,21 @@ function Search() {
 
   const [movies, setMovies] = useState([]);
 
-  const append = `&query=${query}`; // Add anything to be appended into URL here
-  const url = api_url.concat(append); // Concatenate the URL with whatever to be appended
-
   // Search function
   const searchMovies = async (e) => {
     e.preventDefault(); // Prevents search from resetting near instantly
 
-    console.log("-- Submitting Search Query --"); // Debugging purposes
-
     try {
-      const res = await fetch(url); // Stores the results from API fetch into res
-      const data = await res.json(); // Parses into JSON format
-      console.log(data.results); // Debugging purposes
-      setMovies(data.results); // Stores the results of the API fetch response into movies array
+      if (query.length > 0) {
+        const url = api_url.concat(`&query=${query}`); // Concatenate the URL with query input
+        console.log("-- Submitting Search Query --"); // Debugging purposes
+        const res = await fetch(url); // Stores the results from API fetch into res
+        const data = await res.json(); // Parses into JSON format
+        setMovies(data.results); // Stores the results of the API fetch response into movies array
+      } else {
+        console.log("-- No Query Provided --"); // Debugging purposes
+        setMovies(undefined);
+      }
     } catch (err) {
       console.error(err);
     }
@@ -44,7 +45,7 @@ function Search() {
           <input
             type="text"
             className={sbstyles.input}
-            placeholder="movie"
+            placeholder="Movie"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />

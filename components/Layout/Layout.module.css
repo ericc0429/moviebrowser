@@ -1,29 +1,65 @@
 .container {
-  padding: 0 2rem;
+  padding: 1rem 2rem;
+}
+
+/* ===== HEADER ===== */
+
+.headerBar {
+  padding: 1rem 2rem 0.5rem;
+  margin: 0rem;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: var(--header-color);
 }
 
 .header {
-  padding: 1rem;
+  padding: 0rem;
   margin: 0rem;
-  font-size: 2rem;
-  font-weight: 500;
-  text-align: center;
+
+  order: 1;
+  flex-basis: 75%;
+
+  white-space: nowrap;
 }
 
-.navbar {
-  padding: 0.1rem 1rem 0.1rem 1rem;
+.headerText {
+  padding: 0rem;
   margin: 0rem;
-  margin-bottom: 1rem;
 
-  border-style: solid;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: left;
+
+  transition: color 0.3s;
+}
+.headerText:hover {
+  color: var(--highlight-color);
+}
+
+/* ===== NAVIGATION ===== */
+
+.navbar {
+  padding: 0rem;
+  margin: 0rem;
+
+  /* border-style: solid;
   border-color: black;
   border-width: 2px;
-  border-radius: 10px;
+  border-radius: 10px; */
 
   flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  order: 2;
+  align-self: flex-end;
 
   font-size: 1rem;
   font-weight: 500;
@@ -31,40 +67,39 @@
 }
 
 .navcard {
-  padding: 0.5rem;
+  padding: 0.1rem 0.5rem;
   margin: 0rem;
+
   text-align: center;
   color: inherit;
+  white-space: nowrap;
   text-decoration: none;
+
   border: 1px hidden #7c7c7c;
   border-radius: 10px;
   transition: color 0.3s;
-  /*transition: background-color 0.5s, border-radius 1s;*/
   max-width: 300px;
 }
 
 .navcard:hover,
 .navcard:focus,
 .navcard:active {
-  color: #2571ff;
-  /*border-color: #0070f3; */
-  /*
-      border: 0;
-      outline: 0;
-      border-radius: 8px;
-      background-color: #97c7ff;
-      */
+  color: var(--highlight-color);
 }
 
+/* ===== FOOTER ===== */
+
 .footer {
+  padding: 1.5rem 0rem;
+  margin: 1rem 2rem 0rem;
+
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 2rem 0;
-  margin-top: 1rem;
-  border-top: 1px solid #aeaeae;
   justify-content: center;
   align-items: center;
+
+  border-top: 1px solid var(--border-color);
 }
 
 .logo {

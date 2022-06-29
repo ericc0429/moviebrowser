@@ -9,10 +9,6 @@ export default function Nav() {
   console.log("Load Nav");
   return (
     <div className={styles.navbar}>
-      <Link href="/">
-        <a className={styles.navcard}>Home</a>
-      </Link>
-
       <Link href="/movie">
         <a className={styles.navcard}>Trending Movies</a>
       </Link>
