@@ -1,15 +1,16 @@
 // Libraries
+import React from "react";
 import Link from "next/link";
 
 // Functions
-import { Favorites } from "components/Favorites";
+import { FavoriteButton } from "components/FavoriteButton";
 
 // Styles
 // import styles from 'components/Results/Results.module.css';
 import trendcss from "components/Trending/Trending.module.css";
 import searchcss from "components/Search/Search.module.css";
 
-export default function Results(props: any) {
+function Results(props: any) {
   let customStyles = searchcss;
 
   if (props.isTrend) {
@@ -35,7 +36,7 @@ export default function Results(props: any) {
               </div>
             </Link>
 
-            <Favorites id={movie.id} variant={"icon"} />
+            <FavoriteButton id={movie.id} variant={"icon"} />
           </div>
         ))}
     </div>
@@ -60,3 +61,5 @@ function getMovieData(movie, isTrend, _styles) {
     ); // End Return
   }
 }
+
+export default React.memo(Results);

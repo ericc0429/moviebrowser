@@ -6,14 +6,14 @@ import cx from "classnames";
 import useToggleFav from "./useToggleFav";
 
 // Styles
-import styles from "./Favorites.module.css";
+import styles from "./FavoriteButton.module.css";
 
 interface IFavItemProps {
   id: number;
   variant: "icon" | "text";
 }
 
-export default function Favorites({ id, variant }: IFavItemProps) {
+function Favorites({ id, variant }: IFavItemProps) {
   const [isFav, toggleFav] = useToggleFav(id);
 
   return (
@@ -27,3 +27,5 @@ export default function Favorites({ id, variant }: IFavItemProps) {
     ></button>
   );
 }
+
+export default React.memo(Favorites);

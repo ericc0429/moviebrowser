@@ -1,5 +1,5 @@
 // Functions
-import { Favorites } from "components/Favorites";
+import { FavoriteButton } from "components/FavoriteButton";
 
 // Styles
 import styles from "components/Movie/Movie.module.css";
@@ -26,7 +26,7 @@ export default function Moviecard({ moviedata }: IMoviecardProps) {
             Watch Now
           </a>
 
-          {/* <Favorites id={movie.id} variant={"text"} /> */}
+          {/* <FavoriteButton id={movie.id} variant={"text"} /> */}
         </div>
 
         <div className={styles.moviecontainer}>
