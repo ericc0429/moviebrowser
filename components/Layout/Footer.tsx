@@ -1,7 +1,11 @@
+// Libraries
+import React from "react";
+
 // Styles
 import styles from "./Layout.module.css";
 
-export default function Footer() {
+function Footer() {
+  console.log("Load Footer");
   return (
     <footer className={styles.footer}>
       <a>A website for browsing movies.</a>
@@ -12,3 +16,5 @@ export default function Footer() {
     </footer>
   ); // End return
 }
+
+export default React.memo(Footer);

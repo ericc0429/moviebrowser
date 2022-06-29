@@ -1,10 +1,12 @@
 // Libraries
+import React from "react";
 import Link from "next/link";
 
 // Styles
 import styles from "./Layout.module.css";
 
 export default function Nav() {
+  console.log("Load Nav");
   return (
     <div className={styles.navbar}>
       <Link href="/">
@@ -21,3 +23,5 @@ export default function Nav() {
     </div>
   ); // End return
 }
+
+//export default React.memo(Nav);

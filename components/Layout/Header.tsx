@@ -1,10 +1,15 @@
 // Libraries
+import React from "react";
 import Head from "next/head";
+
+// Components
+import Nav from "./Nav";
 
 // Styles
 import styles from "./Layout.module.css";
 
-export default function Header(/*  { pageName }: any  */) {
+function Header(/*  { pageName }: any  */) {
+  console.log("Load Header");
   return (
     <header>
       <Head>
@@ -15,6 +20,10 @@ export default function Header(/*  { pageName }: any  */) {
       </Head>
 
       <p className={styles.header}>Movie Browser</p>
+
+      <Nav />
     </header>
   ); // End return
 }
+
+export default React.memo(Header);
