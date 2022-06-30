@@ -10,6 +10,7 @@ export default function useToggleFav(id: number) {
 
   // setter function to be returned
   const toggleFav = () => {
+    //console.log(`- Toggled Fav for Movie [ ${id} ]`);
     setIsFav((currFav) => !currFav);
     updateLS(id, isFav);
   };

@@ -9,8 +9,8 @@ import Moviecard from "./Moviecard";
 import styles from "components/Movie/Movie.module.css";
 
 // API data
-const api_key = "6c0d3427fcf17ddf80d04106c35a3a98";
-const api_url = `https://api.themoviedb.org/3/movie/`;
+// const api_key = "6c0d3427fcf17ddf80d04106c35a3a98";
+// const api_url = `https://api.themoviedb.org/3/movie/`;
 
 interface IMovieProps {
   moviedata: string;

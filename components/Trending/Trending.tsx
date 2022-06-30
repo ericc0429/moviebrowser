@@ -14,7 +14,7 @@ const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}`
 function Trending() {
   const [movies, setMovies] = useState([]);
 
-  const getTrending = useMemo(async () => {
+  const getTrending = async () => {
     // const getTrending = async ( e ) => {
 
     // e.preventDefault();
@@ -30,17 +30,18 @@ function Trending() {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  };
 
-  /* useEffect(() => {
+  useEffect(() => {
     // Runs function getTrending on page load. (Runs every time page is loaded)
     getTrending();
-    // console.log( "useEffect called" );
   }, []); // The null array here is required to prevent useEffect from spamming API database.
- */
+
   return (
     <main className={styles.main}>
-      <p className={styles.trending}>Now Trending</p>
+      <div className={styles.titleBar}>
+        <p className={styles.trending}>Now Trending</p>
+      </div>
 
       <Results movies={movies} isTrend={true} />
     </main>

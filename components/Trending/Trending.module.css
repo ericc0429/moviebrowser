@@ -3,18 +3,28 @@
   margin: 0rem;
 }
 
-.trending {
-  padding: 1rem 0rem;
+.titleBar {
+  padding: 1.5rem 0rem 0.5rem;
   margin: 1rem 0rem 0.5rem 0rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  /* border-top: 1px solid var(--border-color); */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.trending {
+  padding: 0rem;
+  margin: 0rem;
 
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   color: var(--text-color);
-
-  width: 100%;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
 }
 
 .movielist {

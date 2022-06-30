@@ -16,6 +16,8 @@ interface IFavItemProps {
 function Favorites({ id, variant }: IFavItemProps) {
   const [isFav, toggleFav] = useToggleFav(id);
 
+  //console.log(`- Favorites Button rendered for Movie [ ${id} ]-`);
+
   return (
     <button
       onClick={toggleFav}
@@ -28,4 +30,4 @@ function Favorites({ id, variant }: IFavItemProps) {
   );
 }
 
-export default React.memo(Favorites);
+export default Favorites;
