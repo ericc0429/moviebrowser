@@ -1,19 +1,15 @@
 import { useState } from "react";
 
-export default function useToggleFav(
-  key: string,
-  id: number,
-  initVal: boolean
-) {
+export default function useToggleFav(key: string, id: number) {
   const [isFav, setIsFav] = useState(() => {
-    return isMovieInFav(key, id, initVal);
+    return isMovieInFav(key, id);
   });
 
   // setter function to be returned
   const toggleFav = () => {
     //console.log(`- Toggled Fav for Movie [ ${id} ]`);
     setIsFav((currFav) => !currFav);
-    updateLS(key, id, isFav);
+    updateLS(key, id);
   };
 
   /* 
@@ -25,7 +21,7 @@ export default function useToggleFav(
   return [isFav, toggleFav] as const;
 }
 
-function isMovieInFav(key: string, id: number, initVal: boolean) {
+function isMovieInFav(key: string, id: number) {
   if (typeof window !== "undefined") {
     const data = JSON.parse(window.localStorage.getItem(key));
 
@@ -34,12 +30,10 @@ function isMovieInFav(key: string, id: number, initVal: boolean) {
 
     // Find item in array
     return !!data.find((i) => i === id);
-  } else return initVal;
+  }
 }
 
-function updateLS(key: string, id: number, initVal: boolean) {
-  if (typeof window === "undefined") return initVal;
-
+function updateLS(key: string, id: number) {
   const data = JSON.parse(window.localStorage.getItem(key)) || [];
 
   // Either add or remove the id to/from array
@@ -48,4 +42,6 @@ function updateLS(key: string, id: number, initVal: boolean) {
     : JSON.stringify([...data, id]);
 
   window.localStorage.setItem(key, newData);
+
+  console.log("localStorage updated");
 }

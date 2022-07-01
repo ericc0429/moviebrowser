@@ -18,7 +18,7 @@ interface IFavItemProps {
 }
 
 function Favorites({ id, variant }: IFavItemProps) {
-  const [isFav, toggleFav] = useToggleFav(Key, id, false);
+  const [isFav, toggleFav] = useToggleFav(Key, id);
 
   // https://github.com/astoilkov/use-local-storage-state/issues/23
   // Ensures the component is rendered on client-side before rendering the button.
