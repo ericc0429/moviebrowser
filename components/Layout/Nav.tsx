@@ -2,6 +2,9 @@
 import React from "react";
 import Link from "next/link";
 
+// Components
+import { Search } from "components/Search/";
+
 // Styles
 import styles from "./Layout.module.css";
 
@@ -13,9 +16,11 @@ export default function Nav() {
         <a className={styles.navcard}>Trending Movies</a>
       </Link>
 
-      <Link href="/search">
+      <Search />
+
+      {/* <Link href="/search">
         <a className={styles.navcard}>Search</a>
-      </Link>
+      </Link> */}
     </div>
   ); // End return
 }

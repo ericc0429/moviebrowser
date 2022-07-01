@@ -1,40 +1,51 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-// What we want the key's name to be (Put here to make it more straightforward to change)
-const Key = "favorites";
-
-export default function useToggleFav(id: number) {
+export default function useToggleFav(
+  key: string,
+  id: number,
+  initVal: boolean
+) {
   const [isFav, setIsFav] = useState(() => {
-    if (typeof window !== undefined) return isMovieInFav(id);
+    return isMovieInFav(key, id, initVal);
   });
 
   // setter function to be returned
   const toggleFav = () => {
     //console.log(`- Toggled Fav for Movie [ ${id} ]`);
     setIsFav((currFav) => !currFav);
-    updateLS(id, isFav);
+    updateLS(key, id, isFav);
   };
 
+  /* 
+  const toggleFav = (newFav: boolean) => {
+    setIsFav(newFav);
+    updateLS(key, id, isFav);
+  };
+ */
   return [isFav, toggleFav] as const;
 }
 
-function isMovieInFav(id: number) {
-  const data = JSON.parse(window.localStorage.getItem(Key));
+function isMovieInFav(key: string, id: number, initVal: boolean) {
+  if (typeof window !== "undefined") {
+    const data = JSON.parse(window.localStorage.getItem(key));
 
-  // Local Storage Item does not exist
-  if (!data?.length) return false;
+    // Local Storage Item does not exist
+    if (!data?.length) return false;
 
-  // Find item in array
-  return !!data.find((i) => i === id);
+    // Find item in array
+    return !!data.find((i) => i === id);
+  } else return initVal;
 }
 
-function updateLS(id: number, isFav: boolean) {
-  const data = JSON.parse(window.localStorage.getItem(Key)) || [];
+function updateLS(key: string, id: number, initVal: boolean) {
+  if (typeof window === "undefined") return initVal;
+
+  const data = JSON.parse(window.localStorage.getItem(key)) || [];
 
   // Either add or remove the id to/from array
   const newData = data.includes(id)
     ? JSON.stringify(data.filter((i) => i !== id))
     : JSON.stringify([...data, id]);
 
-  window.localStorage.setItem(Key, newData);
+  window.localStorage.setItem(key, newData);
 }

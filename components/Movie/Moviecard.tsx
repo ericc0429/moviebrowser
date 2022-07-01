@@ -26,7 +26,7 @@ export default function Moviecard({ moviedata }: IMoviecardProps) {
             Watch Now
           </a>
 
-          {/* <FavoriteButton id={movie.id} variant={"text"} /> */}
+          <FavoriteButton id={movie.id} variant={"text"} />
         </div>
 
         <div className={styles.moviecontainer}>

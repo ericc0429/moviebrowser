@@ -6,12 +6,14 @@ export default function Main() {
     <main className={styles.main}>
       <h1 className={styles.title}>Welcome to Movie Browser!</h1>
 
-      <a
-        className={styles.link}
-        href="https://github.com/ericc0429/moviebrowser"
-      >
-        GitHub Repo Link
-      </a>
+      <div className={styles.linkContainer}>
+        <a
+          className={styles.link}
+          href="https://github.com/ericc0429/moviebrowser"
+        >
+          GitHub Repo Link
+        </a>
+      </div>
 
       <p className={styles.text}>
         This website was created using NextJS, and aims to utilize The Movie

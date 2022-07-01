@@ -7,7 +7,7 @@
 .main {
   min-height: 100vh;
   padding: 2rem 0.2rem;
-  flex: 1;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -29,23 +29,48 @@
 }
 
 .text {
-  padding: 0 3rem;
+  padding: 0rem;
   margin: 0;
 
   font-size: 1rem;
+  text-align: center;
+}
+
+.linkContainer {
+  padding: 0rem 2rem;
+  margin: 0rem;
+
+  width: 100%;
+  min-height: 3rem;
+  max-height: 3rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  text-align: center;
+
+  /* border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color); */
 }
 
 .link {
   padding: 0.5rem 0;
   margin: 0;
 
+  flex: 1;
+
   font-size: 1rem;
   font-weight: normal;
+  color: var(--alt-highlight-color);
   transition: font-size 0.5s, color 0.5s, font-weight 0.5s;
 }
 .link:hover {
   font-size: 1.2rem;
   font-weight: bold;
+  color: var(--highlight-color);
 }
 /* .link:visited {
 } */

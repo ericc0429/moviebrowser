@@ -1,6 +1,6 @@
 // Functions
-import { Search } from "components/Search";
+import Searchbar from "components/Search/Searchbar";
 
 export default function Main() {
-  return <Search />; // End return
+  return <Searchbar />; // End return
 }
