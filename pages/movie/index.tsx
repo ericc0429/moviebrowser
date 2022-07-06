@@ -2,7 +2,7 @@
 import { Trending } from "components/Trending";
 
 // API data
-const api_key = "6c0d3427fcf17ddf80d04106c35a3a98";
+const api_key = process.env.API_KEY;
 const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}`;
 
 export default function Main({ data }) {

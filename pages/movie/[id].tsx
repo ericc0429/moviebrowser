@@ -5,7 +5,7 @@ import { GetServerSidePropsContext } from "next";
 import { Movie } from "components/Movie";
 
 // API data
-const api_key = "6c0d3427fcf17ddf80d04106c35a3a98";
+const api_key = process.env.API_KEY;
 const api_url = `https://api.themoviedb.org/3/movie/`;
 
 export default function Main({ data }) {
