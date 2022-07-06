@@ -6,7 +6,7 @@ import { Results } from "components/Results";
 
 // API data
 const api_key = process.env.API_KEY;
-const api_url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}`;
+const api_url = process.env.API_URL_SEARCH;
 
 export default function Main({ data }) {
   return <Results movies={data.results} isTrend={false} />;
@@ -15,9 +15,7 @@ export default function Main({ data }) {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { query } = context.params;
 
-  const url = api_url.concat(`&query=${query}`);
-
-  const res = await fetch(url);
+  const res = await fetch(api_url.concat(api_key + `&query=${query}`));
   const data = await res.json();
 
   return {
