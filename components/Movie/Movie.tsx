@@ -3,6 +3,7 @@ import React from "react";
 
 // Functions
 import { FavoriteButton } from "components/FavoriteButton";
+import parseDate from "utils/parseDate";
 
 // Styles
 import styles from "components/Movie/Movie.module.css";
@@ -48,7 +49,7 @@ export default function Movie({ moviedata }: IMovieProps) {
             <div className={styles.subflexcol}>
               <p className={styles.moviedata}>
                 Release Date:{" "}
-                {movie.release_date && parseReleaseDate(movie.release_date)}
+                {movie.release_date && parseDate(movie.release_date)}
               </p>
 
               <div className={styles.flexrow}>
@@ -73,27 +74,4 @@ export default function Movie({ moviedata }: IMovieProps) {
       </div>
     </main>
   ); // End Return
-}
-
-const months = [
-  undefined,
-  "January ",
-  "February ",
-  "March ",
-  "April ",
-  "May ",
-  "June ",
-  "July ",
-  "August ",
-  "September ",
-  "October ",
-  "November ",
-  "December ",
-];
-
-function parseReleaseDate(rawDate: string) {
-  let dateArr = rawDate.split("-");
-  let month = months[parseInt(dateArr[1])];
-  let date = month + parseInt(dateArr[2]).toString() + ", " + dateArr[0];
-  return date;
 }
