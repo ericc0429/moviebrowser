@@ -4,20 +4,6 @@ import { useState } from "react";
 // What we want the key's name to be (Put here to make it more straightforward to change)
 const Key = "favorites";
 
-export default function useToggleFav(id: number): [boolean, () => void] {
-  const [isFav, setIsFav] = useState(() => {
-    return isMovieInFav(Key, id);
-  });
-
-  // setter function to be returned
-  const toggleFav = () => {
-    setIsFav((currFav) => !currFav);
-    updateLS(Key, id);
-  };
-
-  return [isFav, toggleFav];
-}
-
 function isMovieInFav(key: string, id: number) {
   if (typeof window !== "undefined") {
     const data = JSON.parse(window.localStorage.getItem(key));
@@ -39,4 +25,18 @@ function updateLS(key: string, id: number) {
     : JSON.stringify([...data, id]);
 
   window.localStorage.setItem(key, newData);
+}
+
+export default function useToggleFav(id: number): [boolean, () => void] {
+  const [isFav, setIsFav] = useState(() => {
+    return isMovieInFav(Key, id);
+  });
+
+  // setter function to be returned
+  const toggleFav = () => {
+    setIsFav((currFav) => !currFav);
+    updateLS(Key, id);
+  };
+
+  return [isFav, toggleFav];
 }
