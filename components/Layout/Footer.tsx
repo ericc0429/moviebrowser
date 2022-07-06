@@ -5,7 +5,6 @@ import React from "react";
 import styles from "./Layout.module.css";
 
 function Footer() {
-  console.log("Load Footer");
   return (
     <footer className={styles.footer}>
       <a>A website for browsing movies.</a>
@@ -17,4 +16,4 @@ function Footer() {
   ); // End return
 }
 
-export default React.memo(Footer);
+export default Footer;

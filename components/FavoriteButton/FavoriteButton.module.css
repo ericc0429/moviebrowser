@@ -1,6 +1,6 @@
 /* Standard button format */
 .button {
-  color: var(--text-color);
+  color: var(--alt-text-color);
   background-color: var(--card-color);
 
   border: 2px solid var(--border-color);
@@ -10,7 +10,7 @@
 }
 .button:hover {
   background-color: var(--fav-color);
-
+  color: var(--text-color);
   border: 2px solid var(--fav-color);
 }
 
@@ -42,7 +42,7 @@
   font-size: 1rem;
   font-weight: medium;
   text-align: center;
-  color: var(--text-color);
+  color: var(--alt-text-color);
   background-color: var(--bg-color);
 
   align-self: center;

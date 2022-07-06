@@ -46,11 +46,6 @@
   padding: 0rem;
   margin: 0rem;
 
-  /* border-style: solid;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 10px; */
-
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { FavoriteButton } from "components/FavoriteButton";
 
 // Styles
-// import styles from 'components/Results/Results.module.css';
 import trendcss from "components/Trending/Trending.module.css";
 import searchcss from "components/Search/Search.module.css";
 

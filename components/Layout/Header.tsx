@@ -9,12 +9,11 @@ import Nav from "./Nav";
 // Styles
 import styles from "./Layout.module.css";
 
-function Header(/*  { pageName }: any  */) {
-  console.log("Load Header");
+function Header() {
   return (
     <header>
       <Head>
-        <title>Movie Browser{/*  - {pageName} */}</title>
+        <title>Movie Browser</title>
         <meta name="description" content="Search for your favorite movies" />
         <meta name="author" content="Eric Chen" />
         <link rel="icon" href="/favicon.ico" />

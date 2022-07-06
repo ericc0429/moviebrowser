@@ -1,5 +1,5 @@
 // Libraries
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import cx from "classnames";
 
 // Functions
@@ -30,10 +30,7 @@ function Favorites({ id, variant }: IFavItemProps) {
 
   useEffect(() => {
     setHasMounted(true);
-    // console.log("Favorites Button Mounted.");
   }, []);
-
-  console.log(`- Movie [ ${id} ]: ${isFav} -`);
 
   return (
     hasMounted && (

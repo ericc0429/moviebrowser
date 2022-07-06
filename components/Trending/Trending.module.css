@@ -1,5 +1,5 @@
 .main {
-  padding: /* 1rem  */ 0rem;
+  padding: 0rem;
   margin: 0rem;
 }
 
@@ -13,7 +13,6 @@
   align-items: center;
 
   width: 100%;
-  /* border-top: 1px solid var(--border-color); */
   border-bottom: 1px solid var(--border-color);
 }
 

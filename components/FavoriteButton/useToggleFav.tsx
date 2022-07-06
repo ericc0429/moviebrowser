@@ -7,17 +7,10 @@ export default function useToggleFav(key: string, id: number) {
 
   // setter function to be returned
   const toggleFav = () => {
-    //console.log(`- Toggled Fav for Movie [ ${id} ]`);
     setIsFav((currFav) => !currFav);
     updateLS(key, id);
   };
 
-  /* 
-  const toggleFav = (newFav: boolean) => {
-    setIsFav(newFav);
-    updateLS(key, id, isFav);
-  };
- */
   return [isFav, toggleFav] as const;
 }
 
@@ -42,6 +35,4 @@ function updateLS(key: string, id: number) {
     : JSON.stringify([...data, id]);
 
   window.localStorage.setItem(key, newData);
-
-  console.log("localStorage updated");
 }

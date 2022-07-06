@@ -9,7 +9,6 @@ import { Search } from "components/Search/";
 import styles from "./Layout.module.css";
 
 export default function Nav() {
-  console.log("Load Nav");
   return (
     <div className={styles.navbar}>
       <Link href="/movie">
@@ -17,12 +16,6 @@ export default function Nav() {
       </Link>
 
       <Search />
-
-      {/* <Link href="/search">
-        <a className={styles.navcard}>Search</a>
-      </Link> */}
     </div>
   ); // End return
 }
-
-//export default React.memo(Nav);
