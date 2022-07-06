@@ -1,17 +1,21 @@
 import { useState } from "react";
 
-export default function useToggleFav(key: string, id: number) {
+// Local Storage Key
+// What we want the key's name to be (Put here to make it more straightforward to change)
+const Key = "favorites";
+
+export default function useToggleFav(id: number): [boolean, () => void] {
   const [isFav, setIsFav] = useState(() => {
-    return isMovieInFav(key, id);
+    return isMovieInFav(Key, id);
   });
 
   // setter function to be returned
   const toggleFav = () => {
     setIsFav((currFav) => !currFav);
-    updateLS(key, id);
+    updateLS(Key, id);
   };
 
-  return [isFav, toggleFav] as const;
+  return [isFav, toggleFav];
 }
 
 function isMovieInFav(key: string, id: number) {

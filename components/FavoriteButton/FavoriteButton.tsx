@@ -8,25 +8,17 @@ import useToggleFav from "./useToggleFav";
 // Styles
 import styles from "./FavoriteButton.module.css";
 
-// Local Storage Key
-// What we want the key's name to be (Put here to make it more straightforward to change)
-const Key = "favorites";
-
 interface IFavItemProps {
   id: number;
   variant: "icon" | "text";
 }
 
 function Favorites({ id, variant }: IFavItemProps) {
-  const [isFav, toggleFav] = useToggleFav(Key, id);
+  const [isFav, toggleFav] = useToggleFav(id);
 
   // https://github.com/astoilkov/use-local-storage-state/issues/23
   // Ensures the component is rendered on client-side before rendering the button.
   const [hasMounted, setHasMounted] = useState(false);
-
-  function clickHandler() {
-    toggleFav();
-  }
 
   useEffect(() => {
     setHasMounted(true);
@@ -35,7 +27,7 @@ function Favorites({ id, variant }: IFavItemProps) {
   return (
     hasMounted && (
       <button
-        onClick={clickHandler}
+        onClick={toggleFav}
         className={cx([
           styles.button,
           styles[`variant__${variant}`],
