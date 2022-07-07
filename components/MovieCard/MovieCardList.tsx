@@ -18,7 +18,9 @@ export default function MovieCardList({ movies, variant }: IMovieListProps) {
           .map((movie) => (
             <div key={movie.id}>
               <Link href={"/movie/".concat(movie.id.toString())} key={movie.id}>
-                <MovieCard movie={movie} variant={variant} />
+                <a>
+                  <MovieCard movie={movie} variant={variant} />
+                </a>
               </Link>
             </div>
           ))}
