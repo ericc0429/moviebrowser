@@ -1,5 +1,5 @@
 // Functions
-import { Layout } from "components/Layout";
+import Layout from "components/Layout";
 
 // Styles
 import "styles/globals.css";

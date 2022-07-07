@@ -1,1 +1,1 @@
-export { default as FavoriteButton } from "./FavoriteButton";
+export { default } from "./FavoriteButton";

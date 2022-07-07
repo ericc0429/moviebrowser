@@ -3,27 +3,28 @@ import React from "react";
 import Link from "next/link";
 
 // Functions
-import { FavoriteButton } from "components/FavoriteButton";
+import FavoriteButton from "components/FavoriteButton";
+import { IMovieListProps } from "components/MovieCard";
 
 // Styles
 import trendcss from "components/Trending/Trending.module.css";
 import searchcss from "components/Search/Search.module.css";
 
-function Results(props: any) {
+function Results({ movies }: IMovieListProps, isTrend: boolean) {
   let customStyles = searchcss;
 
-  if (props.isTrend) {
+  if (isTrend) {
     customStyles = trendcss;
   }
 
   return (
     <div className={customStyles.movielist}>
-      {props.movies &&
-        props.movies
+      {movies &&
+        movies
           .filter((movie) => movie.poster_path)
           .map((movie) => (
             <div className={customStyles.moviecard} key={movie.id}>
-              <Link href={"/movie/".concat(movie.id)}>
+              <Link href={"/movie/".concat(movie.id.toString())}>
                 <div className={customStyles.movieattributes}>
                   <img
                     key={movie.id}
@@ -32,7 +33,7 @@ function Results(props: any) {
                     className={customStyles.poster}
                   />
 
-                  {getMovieData(movie, props.isTrend, customStyles)}
+                  {getMovieData(movie, isTrend, customStyles)}
                 </div>
               </Link>
 
@@ -62,4 +63,4 @@ function getMovieData(movie, isTrend, _styles) {
   }
 }
 
-export default React.memo(Results);
+export default Results;

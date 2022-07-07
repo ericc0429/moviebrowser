@@ -24,6 +24,8 @@ function Favorites({ id, variant }: IFavItemProps) {
     setHasMounted(true);
   }, []);
 
+  // TODO: Add utility function isServer, isClient
+
   return (
     hasMounted && (
       <button

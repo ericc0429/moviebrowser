@@ -1,0 +1,157 @@
+/* Movie List Formatting */
+.movielist {
+  padding: 0rem;
+  margin: 0rem;
+
+  display: flex;
+}
+.movielist__grid {
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  gap: 1rem;
+}
+.movielist__list {
+  flex-flow: column nowrap;
+}
+
+/* Detailed MovieCard Format */
+.card {
+  padding: 1rem 0rem;
+  margin: 0rem 0rem;
+
+  display: flex;
+
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--card-color);
+}
+.card:hover,
+.card:focus {
+  border: 2px solid var(--highlight-color);
+  cursor: pointer;
+}
+
+.card__details {
+  margin: 1rem 0rem;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.card__grid {
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  max-width: min-content;
+
+  text-align: center;
+  white-space: pre-wrap;
+  color: var(--text-color);
+
+  transition: border-color 0.5s, color 0.5s;
+}
+.card__list {
+  flex-flow: row nowrap;
+}
+
+.subcontainer {
+  padding: 0rem;
+  margin: 0rem;
+
+  display: flex;
+}
+.subcontainer__row {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.subcontainer__column {
+  padding: 0rem 0.5rem;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.subcontainer__column__grid {
+  padding: 0rem;
+}
+
+/* Standard Styling Stuff */
+
+.spacing {
+  padding: 0.2rem 0rem;
+}
+
+.title {
+  margin: 0rem;
+
+  font-weight: 500;
+  color: var(--highlight-color);
+}
+.title__grid {
+  font-size: 1rem;
+  text-align: center;
+}
+.title__details,
+.title__search {
+  font-size: 3rem;
+  text-align: left;
+}
+
+.subtitle {
+  margin: 0rem;
+
+  font-size: 0.9rem;
+  font-weight: medium;
+  text-align: left;
+  color: var(--alt-text-color);
+}
+
+.text {
+  margin: 0rem;
+
+  font-size: 0.9rem;
+  font-weight: medium;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.subtext {
+  margin: 0rem;
+
+  font-size: 0.75rem;
+  font-weight: light;
+  text-align: left;
+  color: var(--alt-text-color2);
+}
+
+.linkbutton {
+  padding: 0.3rem;
+  margin: 0.5rem;
+
+  align-self: center;
+
+  font-size: 1rem;
+  font-weight: medium;
+  text-align: center;
+  color: var(--alt-highlight-color);
+
+  border: 2px solid var(--alt-highlight-color);
+  border-radius: 10px;
+
+  transition: color 0.5s, border-color 0.5s;
+}
+.linkbutton:hover,
+.linkbutton:focus {
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
+}
+
+.poster {
+  padding: 0rem;
+  margin: 0rem;
+
+  width: 185px;
+  height: 278px;
+}

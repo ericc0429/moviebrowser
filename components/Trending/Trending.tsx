@@ -1,18 +1,15 @@
 // Libraries
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 // Functions
 import { Results } from "components/Results";
+import { IMovie } from "components/MovieCard";
 
 // Styles
 import styles from "./Trending.module.css";
 
-// API data
-/* const api_key = "6c0d3427fcf17ddf80d04106c35a3a98";
-const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}`; */
-
 interface ITrendingProps {
-  movies: Array<Object>;
+  movies: IMovie[];
 }
 
 function Trending({ movies }: ITrendingProps) {
