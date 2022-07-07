@@ -1,5 +1,6 @@
 // Libraries
 import React from "react";
+import Link from "next/link";
 import cx from "classnames";
 
 // Functions
@@ -16,7 +17,6 @@ interface IMovieProps {
 }
 
 export default function MovieCard({ movie, variant }: IMovieProps) {
-  console.log("Moviecard");
   return (
     <div
       className={cx([styles.card, styles[`card__${variant}`]])}
@@ -24,12 +24,23 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
     >
       {/* Left Container */}
       <div className={cx([styles.subcontainer, styles.subcontainer__column])}>
-        <img
-          key={movie.id}
-          src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-          alt={movie.title + " Poster"}
-          className={styles.poster}
-        />
+        {variant != "details" ? (
+          <Link href={"/movie/".concat(movie.id.toString())}>
+            <img
+              key={movie.id}
+              src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+              alt={movie.title + " Poster"}
+              className={styles.poster}
+            />
+          </Link>
+        ) : (
+          <img
+            key={movie.id}
+            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+            alt={movie.title + " Poster"}
+            className={styles.poster}
+          />
+        )}
 
         {variant == "details" && (
           <a className={styles.linkbutton} href={movie.homepage}>
@@ -37,23 +48,35 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
           </a>
         )}
 
-        <FavoriteButton
-          id={movie.id}
-          variant={variant == "details" ? "text" : "icon"}
-        />
+        {variant == "details" && (
+          <FavoriteButton id={movie.id} variant={"text"} />
+        )}
       </div>
 
       {/* Right Container */}
       <div className={cx([styles.subcontainer, styles.subcontainer__column])}>
-        <p
-          className={cx([
-            styles.title,
-            styles[`title__${variant}`],
-            { [styles.spacing]: variant == "details" },
-          ])}
-        >
-          {movie.title}
-        </p>
+        {variant != "details" && (
+          <Link href={"/movie/".concat(movie.id.toString())}>
+            <p className={cx([styles.title, styles[`title__${variant}`]])}>
+              {movie.title}
+            </p>
+          </Link>
+        )}
+        {variant == "details" && (
+          <p
+            className={cx([
+              styles.title,
+              styles[`title__${variant}`],
+              { [styles.spacing]: variant == "details" },
+            ])}
+          >
+            {movie.title}
+          </p>
+        )}
+
+        {variant != "details" && (
+          <FavoriteButton id={movie.id} variant={"icon"} />
+        )}
 
         {variant == "details" && (
           <p className={styles.subtitle}>
@@ -82,31 +105,6 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
             Release Date: {movie.release_date && parseDate(movie.release_date)}
           </p>
         )}
-
-        {/* <div className={cx([styles.subcontainer, styles.subcontainer__row])}>
-          <div
-            className={cx([styles.subcontainer, styles.subcontainer__column])}
-          >
-            <div
-              className={cx([styles.subcontainer, styles.subcontainer__row])}
-            >
-              movie.genres.map((genre) => (
-                <p className={styles.subtitle} key={genre.id}>
-                  {genre.name}
-                </p>
-              ))
-            </div>
-          </div>
-
-          <div className={styles.prodcontainer}>
-            <p className={styles.movieprod}>Production: </p>
-            {movie.production_companies.map((prod) => (
-              <p className={styles.moviedata} key={prod.id}>
-                {prod.name}
-              </p>
-            ))}
-          </div>
-        </div> */}
       </div>
     </div>
   ); // End Return

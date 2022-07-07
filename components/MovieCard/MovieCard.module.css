@@ -27,11 +27,6 @@
   border-radius: 10px;
   background-color: var(--card-color);
 }
-.card:hover,
-.card:focus {
-  border: 2px solid var(--highlight-color);
-  cursor: pointer;
-}
 
 .card__details {
   margin: 1rem 0rem;
@@ -54,6 +49,13 @@
 }
 .card__list {
   flex-flow: row nowrap;
+}
+.card__grid:hover,
+.card__grid:focus,
+.card__list:hover,
+.card__list:focus {
+  border: 2px solid var(--highlight-color);
+  cursor: pointer;
 }
 
 .subcontainer {

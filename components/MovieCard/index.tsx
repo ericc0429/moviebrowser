@@ -1,3 +1,3 @@
 export { default as MovieCard } from "./MovieCard";
 export * from "./IMovieData";
-export * from "./MovieCardList";
+export { default as MovieCardList } from "./MovieCardList";

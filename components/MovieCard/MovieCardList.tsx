@@ -1,5 +1,4 @@
 // Libraries
-import Link from "next/link";
 import cx from "classnames";
 
 // Components
@@ -17,11 +16,7 @@ export default function MovieCardList({ movies, variant }: IMovieListProps) {
           .filter((movie) => movie.poster_path)
           .map((movie) => (
             <div key={movie.id}>
-              <Link href={"/movie/".concat(movie.id.toString())} key={movie.id}>
-                <a>
-                  <MovieCard movie={movie} variant={variant} />
-                </a>
-              </Link>
+              <MovieCard movie={movie} variant={variant} />
             </div>
           ))}
     </div>
