@@ -24,23 +24,12 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
     >
       {/* Left Container */}
       <div className={cx([styles.subcontainer, styles.subcontainer__column])}>
-        {variant != "details" ? (
-          <Link href={"/movie/".concat(movie.id.toString())}>
-            <img
-              key={movie.id}
-              src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-              alt={movie.title + " Poster"}
-              className={styles.poster}
-            />
-          </Link>
-        ) : (
-          <img
-            key={movie.id}
-            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-            alt={movie.title + " Poster"}
-            className={styles.poster}
-          />
-        )}
+        <img
+          key={movie.id}
+          src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+          alt={movie.title + " Poster"}
+          className={styles.poster}
+        />
 
         {variant == "details" && (
           <a className={styles.linkbutton} href={movie.homepage}>
@@ -55,24 +44,16 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
 
       {/* Right Container */}
       <div className={cx([styles.subcontainer, styles.subcontainer__column])}>
-        {variant != "details" && (
-          <Link href={"/movie/".concat(movie.id.toString())}>
-            <p className={cx([styles.title, styles[`title__${variant}`]])}>
-              {movie.title}
-            </p>
-          </Link>
-        )}
-        {variant == "details" && (
-          <p
-            className={cx([
-              styles.title,
-              styles[`title__${variant}`],
-              { [styles.spacing]: variant == "details" },
-            ])}
-          >
-            {movie.title}
-          </p>
-        )}
+        <p
+          className={cx([
+            styles.title,
+            styles[`title__${variant}`],
+            styles.spacing,
+            { [styles.spacing]: variant == "details" },
+          ])}
+        >
+          {movie.title}
+        </p>
 
         {variant != "details" && (
           <FavoriteButton id={movie.id} variant={"icon"} />

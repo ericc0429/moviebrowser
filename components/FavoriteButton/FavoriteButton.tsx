@@ -24,12 +24,17 @@ function Favorites({ id, variant }: IFavItemProps) {
     setHasMounted(true);
   }, []);
 
+  const handleToggle = (e) => {
+    e.preventDefault();
+    toggleFav();
+  };
+
   // TODO: Add utility function isServer, isClient
 
   return (
     hasMounted && (
       <button
-        onClick={toggleFav}
+        onClick={handleToggle}
         className={cx([
           styles.button,
           styles[`variant__${variant}`],

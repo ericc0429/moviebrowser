@@ -1,5 +1,6 @@
 // Libraries
 import cx from "classnames";
+import Link from "next/link";
 
 // Components
 import { IMovieListProps } from "./IMovieData";
@@ -15,9 +16,11 @@ export default function MovieCardList({ movies, variant }: IMovieListProps) {
         movies
           .filter((movie) => movie.poster_path)
           .map((movie) => (
-            <div key={movie.id}>
-              <MovieCard movie={movie} variant={variant} />
-            </div>
+            <Link href={"/movie/".concat(movie.id.toString())} key={movie.id}>
+              <a>
+                <MovieCard movie={movie} variant={variant} />
+              </a>
+            </Link>
           ))}
     </div>
   );

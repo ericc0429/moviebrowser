@@ -27,7 +27,6 @@
   border-radius: 10px;
   background-color: var(--card-color);
 }
-
 .card__details {
   margin: 1rem 0rem;
   flex-flow: row nowrap;
@@ -38,6 +37,8 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+
+  align-self: stretch;
 
   max-width: min-content;
 
