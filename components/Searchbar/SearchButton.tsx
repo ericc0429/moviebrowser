@@ -7,7 +7,7 @@ import Searchbar from "./Searchbar";
 // Styles
 import sbstyles from "./Searchbar.module.css";
 
-function Search() {
+function SearchButton() {
   const [showSearch, setShowSearch] = useState(false);
 
   const showSearchHandler = () => {
@@ -31,4 +31,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SearchButton;

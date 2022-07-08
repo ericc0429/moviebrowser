@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 
 // Components
-import { Search } from "components/Search/";
+import { SearchButton } from "components/Searchbar";
 
 // Styles
 import styles from "./Layout.module.css";
@@ -15,7 +15,7 @@ export default function Nav() {
         <a className={styles.navcard}>Trending Movies</a>
       </Link>
 
-      <Search />
+      <SearchButton />
     </div>
   ); // End return
 }

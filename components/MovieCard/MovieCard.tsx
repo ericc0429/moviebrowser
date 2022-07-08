@@ -1,6 +1,5 @@
 // Libraries
 import React from "react";
-import Link from "next/link";
 import cx from "classnames";
 
 // Functions
@@ -31,13 +30,13 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
           className={styles.poster}
         />
 
-        {variant == "details" && (
+        {variant === "details" && (
           <a className={styles.linkbutton} href={movie.homepage}>
             Watch Now
           </a>
         )}
 
-        {variant == "details" && (
+        {variant === "details" && (
           <FavoriteButton id={movie.id} variant={"text"} />
         )}
       </div>
@@ -55,17 +54,17 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
           {movie.title}
         </p>
 
-        {variant != "details" && (
+        {variant !== "details" && (
           <FavoriteButton id={movie.id} variant={"icon"} />
         )}
 
-        {variant == "details" && (
+        {variant === "details" && (
           <p className={styles.subtitle}>
             Rating: {movie.vote_average}/10 ({movie.vote_count} reviews)
           </p>
         )}
 
-        {variant == "details" && (
+        {variant === "details" && (
           <p
             className={cx([
               styles.text,
@@ -76,7 +75,7 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
           </p>
         )}
 
-        {variant == "details" && (
+        {variant === "details" && (
           <p
             className={cx([
               styles.subtitle,

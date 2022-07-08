@@ -17,6 +17,10 @@ interface IMovieGenre {
   name: string;
 }
 
+/* Movie Data Interface ==================
+- Left other items returned in Object, in case we
+    add features that may require them down the line
+======================================= */
 export interface IMovie {
   // adult: boolean;
   // backdrop_path: string;

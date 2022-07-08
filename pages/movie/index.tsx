@@ -1,12 +1,12 @@
 // Functions
-import { MovieCardList } from "components/MovieCard";
+import Results from "components/Results";
 
 // API data
 const api_key = process.env.API_KEY;
 const api_url = process.env.API_URL_TREND;
 
 export default function Main({ data }) {
-  return <MovieCardList movies={data.results} variant={"grid"} />;
+  return <Results movies={data.results} title={"Now Trending"} />;
 }
 
 export async function getServerSideProps() {
