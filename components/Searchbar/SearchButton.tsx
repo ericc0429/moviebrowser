@@ -19,7 +19,7 @@ function SearchButton() {
       {!showSearch && (
         <button className={sbstyles.showSearchBtn} onClick={showSearchHandler}>
           <img
-            src="/searchIcon512px.png"
+            src="/searchicon.svg"
             alt="Search"
             className={sbstyles.btnIcon}
           ></img>
