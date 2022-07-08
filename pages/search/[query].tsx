@@ -2,20 +2,20 @@
 import { GetServerSidePropsContext } from "next";
 
 // Functions
-import { MovieCard } from "components/MovieCard";
+import Results from "components/Results";
 
 // API data
 const api_key = process.env.API_KEY;
-const api_url = process.env.API_URL_MOVIE;
+const api_url = process.env.API_URL_SEARCH;
 
 export default function Main({ data }) {
-  return <MovieCard movie={data} variant={"details"} />; // End return
+  return <Results movies={data.results} title={"Search Results"} />;
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const { id } = context.params;
+  const { query } = context.params;
 
-  const res = await fetch(api_url.concat(id + api_key));
+  const res = await fetch(api_url.concat(api_key + `&query=${query}`));
   const data = await res.json();
 
   return {
