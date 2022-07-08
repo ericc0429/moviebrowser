@@ -3,7 +3,7 @@ import cx from "classnames";
 import Link from "next/link";
 
 // Components
-import { IMovieListProps } from "./IMovieData";
+import { IMovieListProps } from "./MovieCard.types";
 import MovieCard from "./MovieCard";
 
 // Styles

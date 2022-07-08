@@ -4,7 +4,7 @@ import cx from "classnames";
 
 // Functions
 import FavoriteButton from "components/FavoriteButton";
-import { IMovie } from "./IMovieData";
+import { IMovie } from "./MovieCard.types";
 import parseDate from "utils/parseDate";
 
 // Styles
