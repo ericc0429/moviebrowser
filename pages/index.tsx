@@ -3,7 +3,7 @@ import styles from "styles/Home.module.css";
 
 export default function Main() {
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
       <h1 className={styles.title}>Welcome to Movie Browser!</h1>
 
       <div className={styles.linkContainer}>
@@ -21,6 +21,6 @@ export default function Main() {
         currently trending, and allows for the user to search for a specific
         movie by name.
       </p>
-    </main>
+    </div>
   ); // End return
 }

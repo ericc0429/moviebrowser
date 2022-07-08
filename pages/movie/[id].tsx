@@ -2,7 +2,7 @@
 import { GetServerSidePropsContext } from "next";
 
 // Functions
-import { MovieCard } from "components/MovieCard";
+import MovieCard from "components/MovieCard";
 
 // API data
 const api_key = process.env.API_KEY;

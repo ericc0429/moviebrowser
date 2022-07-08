@@ -3,11 +3,11 @@ import cx from "classnames";
 import Link from "next/link";
 
 // Components
-import { IMovieListProps } from "./MovieCard.types";
-import MovieCard from "./MovieCard";
+import { IMovieListProps } from "components/MovieCard";
+import MovieCard from "components/MovieCard";
 
 // Styles
-import styles from "./MovieCard.module.css";
+import styles from "./MovieList.module.css";
 
 export default function MovieCardList({ movies, variant }: IMovieListProps) {
   return (

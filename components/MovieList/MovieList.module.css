@@ -1,0 +1,17 @@
+/* Movie List Formatting */
+.movielist {
+  padding: 0rem;
+  margin: 0rem;
+
+  display: flex;
+}
+.movielist__grid {
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  gap: 1rem;
+}
+.movielist__list {
+  flex-flow: column nowrap;
+}

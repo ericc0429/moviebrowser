@@ -2,7 +2,7 @@
 import React from "react";
 
 // Functions
-import { MovieCardList } from "components/MovieCard";
+import MovieList from "components/MovieList";
 import { IMovie } from "components/MovieCard";
 
 // Styles
@@ -20,7 +20,7 @@ function Results({ movies, title }: IResultsProps) {
         <p className={styles.title}>{title}</p>
       </div>
 
-      <MovieCardList movies={movies} variant={"grid"} />
+      <MovieList movies={movies} variant={"grid"} />
     </main>
   ); // End Return
 }
