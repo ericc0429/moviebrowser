@@ -48,7 +48,8 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
             styles.title,
             styles[`title__${variant}`],
             styles.spacing,
-            { [styles.spacing]: variant == "details" },
+            { [styles.spacing]: variant === "details" },
+            { [styles.spacing__card]: variant !== "details" },
           ])}
         >
           {movie.title}
@@ -68,7 +69,7 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
           <p
             className={cx([
               styles.text,
-              { [styles.spacing]: variant == "details" },
+              { [styles.spacing]: variant === "details" },
             ])}
           >
             {movie.overview}
@@ -79,7 +80,7 @@ export default function MovieCard({ movie, variant }: IMovieProps) {
           <p
             className={cx([
               styles.subtitle,
-              { [styles.spacing]: variant == "details" },
+              { [styles.spacing]: variant === "details" },
             ])}
           >
             Release Date: {movie.release_date && parseDate(movie.release_date)}

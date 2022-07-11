@@ -67,6 +67,9 @@
 .spacing {
   padding: 0.2rem 0rem;
 }
+.spacing__card {
+  height: 5rem;
+}
 
 .title {
   margin: 0rem;
